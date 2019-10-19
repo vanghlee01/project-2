@@ -5,11 +5,18 @@ module.exports = function(app) {
   app.get("/", function(req, res) {
     db.Example.findAll({}).then(function(dbExamples) {
       res.render("index", {
-        msg: "Welcome!",
+        msg: "",
         examples: dbExamples
       });
     });
   });
+  app.get("/auth", function(req, res) {
+    res.render("auth");
+  });
+  app.get("/news", function(req, res) {
+    res.render("trip");
+  });
+  
 
   // Load example page and pass in an example by id
   app.get("/example/:id", function(req, res) {
