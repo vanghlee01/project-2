@@ -4,18 +4,16 @@
   <meta charset="UTF-8">
   <title>PLAN YOUR TRIP!</title>
 
-  <!-- Link to the jQuery Library -->
   <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
 
-  <!-- Link to Firebase and Firebase UI -->
-  <script src="https://www.gstatic.com/firebasejs/live/3.6/firebase.js"></script>
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
   <script src="js/config.js"></script>
-  <script src="https://cdn.firebase.com/libs/firebaseui/1.0.0/firebaseui.js"></script>
-
-  <!-- Links to CSS Stylesheets -->
-  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css"> -->
-  <link rel="stylesheet" href="css/reset.css">
-  <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/1.0.0/firebaseui.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
   <link rel="stylesheet" href="css/style.css">
 
@@ -45,7 +43,7 @@
     <div class="divider"> </div>
 
     <div class="container" id="instructions">
-      <h5> Please login  </h5>
+      <h5> Please login . . . . </h5>
     </div>
   
     <div id="firebaseui-auth-container"></div>
@@ -54,14 +52,14 @@
 
 <div id="id01" class="modal">
   
-  <form class="modal-content animate" action="/action_page.php" method="post">
+  <form class="modal-content animate" action="/controllers/authenticate-controller" method="post">
    
     <div class="container">
       <label for="uname"><b>Username</b></label>
-      <input type="text" placeholder="Enter Username" name="uname" required>
+      <input type="text" name="username_r" placeholder="username" required>
 
-      <label for="psw"><b>Password</b></label>
-      <input type="password" placeholder="Enter Password" name="psw" required>
+      <input type="password" name="password_r" placeholder="Password" required>
+    
         
       <button type="submit">Login</button>
       <label>
@@ -76,7 +74,56 @@
   </form>
 </div>
 
+
+<button onclick="document.getElementById('id02').style.display='block'" style="width:auto;">Sign Up</button>
+
+<div id="id02" class="modal">
+  <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
+  <form action="/controllers/register-controller" method="POST">
+    <div class="container">
+      <h3>Sign Up</h3>
+      <p>Please fill in this form to create an account.</p>
+      <hr>
+      <label for="username"><b>User Name</b></label>
+      <input type="text" placeholder="Enter User Name" name="username" required>
+
+      <label for="psw"><b>password</b></label>
+      <input type="password" placeholder="Enter Password" name="password" required>
+
+      <label for="psw-repeat"><b>Repeat Password</b></label>
+      <input type="password" placeholder="Repeat Password" name="password-repeat" required>
+
+<label for="email"><b>Email</b></label>
+      <input type="text" placeholder="Enter Email adress" name="email" required>
+      <label>
+        <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
+      </label>
+
+      <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
+
+      <div class="clearfix">
+       <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
+        <button type="submit" class="signupbtn">Sign Up</button>
+      </div>
+    </div>
+  </form>
 </div>
+
+<script>
+// Get the modal
+var modal = document.getElementById('id02');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == moda2) {
+    modal.style.display = "none";
+  }
+}
+</script>
+
+</body>
+
+
 
 <script>
 // Get the modal
@@ -90,40 +137,7 @@ window.onclick = function(event) {
     }
 }
 
-  <script type="text/javascript">
-    // FirebaseUI config.
-    var uiConfig = {
-      // Url to redirect to after a successful sign-in.
-      'signInSuccessUrl': '/tripPlanner',
-      'callbacks': {
-        'signInSuccess': function(user, credential, redirectUrl) {
-            // The widget has been used in redirect mode, so we redirect to the signInSuccessUrl
-            return true
-        }
-      },
-      'signInOptions': [
-        // TODO(developer): Remove the providers you don't need for your app.
-        firebase.auth.GoogleAuthProvider.PROVIDER_ID,
-        {
-          provider: firebase.auth.FacebookAuthProvider.PROVIDER_ID,
-          scopes :[
-            'public_profile',
-            'email'
-          ]
-        },
-        firebase.auth.TwitterAuthProvider.PROVIDER_ID,
-        firebase.auth.GithubAuthProvider.PROVIDER_ID,
-        firebase.auth.EmailAuthProvider.PROVIDER_ID
-      ],
-      // Terms of service url.
-      'tosUrl': 'https://www.google.com/policies/terms/'
-    };
-    // Initialize the FirebaseUI Widget using Firebase.
-    var ui = new firebaseui.auth.AuthUI(firebase.auth());
-    // The start method will wait until the DOM is loaded to include the FirebaseUI sign-in widget
-    // within the element corresponding to the selector specified.
-    ui.start('#firebaseui-auth-container', uiConfig);
-  </script>
+
 
 </body>
 </html>
