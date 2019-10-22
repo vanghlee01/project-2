@@ -18,83 +18,53 @@
         <div class="row">
             <div class="col s12 center">
                 <h1 class="center grey-text">Trip Planner!</h1>
-                <p class="center grey-text ">Have a trip you're dying to go on? But don't know where to start?</p>
-                <p class="center grey-text">We'll give you a hint - start here.</p>
-            </div>
-        </div>
-
-        <div class="row">
-            <form class="col s6 offset-s3">
-                <div class="row">
-                    <div class="input-field col s6">
-                        <input id="first_name" type="text" class="validate">
-                        <label for="first_name">First Name</label>
-                    </div>
-                    <div class="input-field col s6">
-                        <input id="last_name" type="text" class="validate">
-                        <label for="last_name">Last Name</label>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="input-field col s12">
-                        <input id="email" type="email" class="validate">
-                        <label for="email">Email</label>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="input-field col s12">
-                        <input id="origin" type="text" class="validate">
-                        <label for="origin">Origin</label>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="input-field col s12">
-                        <input id="destination" type="text" class="validate">
-                        <label for="destination">Destination</label>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="input-field col s6">
-                        <input id="begin-trip" type="text" class="datepicker">
-                        <label for="begintrip">Begin Trip</label>
-                    </div>
-                    <div class="input-field col s6">
-                        <input id="end-trip" type="text" class="datepicker">
-                        <label for="begintrip">End Trip</label>
-                    </div>
-                    <script>
-                        document.addEventListener("DOMContentLoaded", function () {
-                            var elems = document.querySelectorAll(".datepicker");
-                            var instances = M.Datepicker.init(elems, options);
-                            instances(elems, options);
-                        });
-                    </script>
-                </div>
-                <label for="group-size">Group Size</label>
-                <div id="test-slider">
-                    <form action="#">
-                        <p class="range-field">
-                            <input type="range" id="group-size" min="0" max="50" />
-                            <span class="thumb">
-                                <span class="value"></span>
-                            </span>
-                        </p>
-                    </form>
-                </div>
-            </form>
-
-        </div>
-        <div class="row">
-            <div class="col s12 center">
-                <a href="./surveyplan-test.html"><button class="btn waves-effect waves-light" type="submit"
-                        name="action">Submit
-                        <i class="material-icons right">send</i>
-                    </button></a>
+                <p class="center grey-text ">Now that we know where you are going - build out the details here!</p>
             </div>
         </div>
     </div>
+
+    <!-- Float this container Left -->
+    <div class="container">
+        <div class="row">
+            <div class="card col s3 left">
+                <div class="card-image waves-effect waves-block waves-light">
+                    <img class="activator"
+                        src="https://media.gettyimages.com/photos/eiffel-tower-in-paris-france-picture-id924894324?s=612x612">
+                </div>
+                <div class="card-content">
+                    <span class="card-title activator grey-text text-darken-4">See Details Here<i
+                            class="material-icons right">more_vert</i></span>
+                    <p><i>trip name goes here</i></p>
+                </div>
+                <div class="card-reveal">
+                    <span class="card-title grey-text text-darken-4"><i>trip name goes here</i><i
+                            class="material-icons right">close</i></span>
+
+                    <!-- Have these fields editable / updateable -->
+                    <p><b>Origin:</b> Minneapolis, MN</p>
+                    <p><b>Destination:</b> Paris, France</p>
+                    <p><b>Group Size:</b> 5</p>
+                    <p><b>Begin Date:</b> 11/11/19</p>
+                    <p><b>End Date:</b> 11/20/19</p>
+                </div>
+            </div>
+            <div class="right">
+                <h5 class="col-s5 offset-s7">Some test content</h5>
+            </div>
+        </div>
+
+
+    </div>
+
+
+
+
     <br>
     <br>
+    <br>
+    <br>
+    <br>
+
 
     <footer class="page-footer grey">
         <style>
