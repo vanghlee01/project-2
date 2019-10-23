@@ -1,7 +1,11 @@
 {
   "development": {
     "username": "root",
+<<<<<<< HEAD
     "password": "Blunt.14",
+=======
+    "password": "",
+>>>>>>> 44aa909f66aeef8debc9cd1d65df71cd8657fd0d
     "database": "exampledb",
     "host": "localhost",
     "dialect": "mysql"
