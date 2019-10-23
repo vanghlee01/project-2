@@ -2,28 +2,25 @@
   "development": {
     "username": "root",
 <<<<<<< HEAD
-    "password": "root",
+    "password": "Blunt.14",
 =======
-    "password": "root",
->>>>>>> 5caeb872e30b90be22693851d0457dcddd8c8f22
+    "password": "",
+>>>>>>> 44aa909f66aeef8debc9cd1d65df71cd8657fd0d
     "database": "exampledb",
     "host": "localhost",
-    "dialect": "mysql",
-    "port": 3306
+    "dialect": "mysql"
   },
   "test": {
     "username": "root",
-    "password": "root",
-    "database": "exampledb",
+    "password": null,
+    "database": "testdb",
     "host": "localhost",
     "dialect": "mysql",
-    "logging": false,
-    "port": 3306
+    "logging": false
   },
   "production": {
     "use_env_variable": "JAWSDB_URL",
-    "dialect": "mysql",
-    "port": 3306
+    "dialect": "mysql"
   }
 }
 
