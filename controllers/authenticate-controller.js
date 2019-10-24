@@ -21,7 +21,7 @@ module.exports.authenticate = function(req, res) {
           var decryptedString = cryptr.decrypt(results[0].password);
 
           console.log(decryptedString);
-          if (password == decryptedString) {
+          if (password === decryptedString) {
             // res.json({
             //     status:true,
             //     message:'successfully authenticated'
