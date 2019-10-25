@@ -4,13 +4,24 @@
     "password": "",
     "database": "exampledb",
     "host": "localhost",
-    "dialect": "mysql"
+    "dialect": "mysql",
+    "port": 3306
   },
   "test": {
     "username": "root",
-    "password": null,
-    "database": "testdb",
+    "password": "",
+    "database": "exampledb",
     "host": "localhost",
+    "dialect": "mysql",
+    "logging": false,
+    "port": 3306
+  },
+  "ci": {
+    "username": "root",
+    "password": "",
+    "database": "testdb",
+    "host": "127.0.0.1",
+    "socketPath": "~travis/.my.cnf",
     "dialect": "mysql",
     "logging": false
   },
@@ -25,6 +36,7 @@
   },
   "production": {
     "use_env_variable": "JAWSDB_URL",
-    "dialect": "mysql"
+    "dialect": "mysql",
+    "port": 3306
   }
 }
