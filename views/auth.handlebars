@@ -1,7 +1,6 @@
 <nav>
   <div class="nav-wrapper black">
     <a href="/" class="brand-logo" style="y:-20"><i class="material-icons">flight_land</i>Name of App</a>
-
     <ul id="nav-mobile" class="right hide-on-med-and-down">
       <li><a class="waves-effect waves-light btn modal-trigger teal accent-1 black-text" href="#modal2"
           style="width:auto;">Login</a></li>
@@ -17,10 +16,11 @@
   <div class="section no-pad-bot">
 
     <div class="container">
-      <h1>Name of App</h1>
+      <h1 class="trip-planner">Trip Planner</h1>
       <br><br>
     </div>
     <p>Sign in to access your saved trips or you can plan a trip without being able to save it.<p>
+
     <a class="waves-effect waves-light btn modal-trigger teal accent-1 black-text" href="/controllers/main"
             style=" width:auto;">Plan a trip</a>
 
@@ -31,13 +31,13 @@
 
 <!-- Modal for Sign Up -->
 <div id="modal1" class="modal">
-  <div>
-    <a class="modal-close"><i class="material-icons">close</i></a>
-  </div>
-  <div class="modal-content">
 
-    <h4>Account Sign Up</h4>
-    <p>Sign up with us to start planning your trips!</p>
+  <div class="modal-content">
+    <div>
+      <a class="modal-close"><i class="material-icons">close</i></a>
+    </div>
+    <h4 class="center">Account Sign Up</h4>
+    <p class="center">Sign up with us to start planning your trips!</p>
 
     <div class="row">
       <form class="col s12" action="/controllers/register-controller" method="POST">
@@ -99,14 +99,13 @@
   </form>
 <!-- Modal for Login-->
 <div id="modal2" class="modal">
-  <div>
-    <a class="modal-close"><i class="material-icons">close</i></a>
-  </div>
+
   <div class="modal-content">
+
     <h4>Login</h4>
     <p>Enter your account information</p>
      <form  action="/controllers/authenticate-controller" method="post">
-     
+
       <div class="row">
         <div class="input-field col s12">
           {{!-- <input id="username" type="text" class="validate"> --}}
@@ -122,7 +121,7 @@
         </div>
       </div>
       <div class="row">
-        <div class="col s9">
+        <div class="col s12">
           <a href="#!" class="modal-close waves-effect waves-green btn red darken-4 left">Cancel</a>
         </div>
         <div class="col s9">
