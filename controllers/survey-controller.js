@@ -1,30 +1,30 @@
-var Cryptr = require("cryptr");
 var connection = require("../config/config");
-var cryptr = new Cryptr("myTotalySecretKey");
 
-module.exports.register = function(req, res) {
+module.exports.survey = function(req, res) {
   var today = new Date();
-  var encryptedString = cryptr.encrypt(req.body.password);
-  var accounts = {
+  var survey = {
     username: req.body.username,
     first_name: req.body.first_name,
     last_name: req.body.last_name,
     email: req.body.email,
-    password: encryptedString,
+    origin: req.body.origin,
+    destination: req.body.destination,
+    begintrip: req.body.begintrip,
     created_at: today,
     updated_at: today
   };
 
-  console.log(accounts);
-  connection.query("INSERT INTO accounts SET ?", accounts, function(
+  console.log(survey + "survey is responding");
+  connection.query("INSERT INTO survey SET ?", survey, function(
     error,
     results,
     fields
   ) {
     if (error) {
+      console.log(error);
       res.json({
         status: false,
-        message: "there are some error with query"
+        message: error
       });
     } else {
       // res.json({
@@ -32,7 +32,7 @@ module.exports.register = function(req, res) {
       //   data: results,
       //   message: "user registered sucessfully"
       // });
-      res.redirect("main");
+      res.redirect("surveyplan");
     }
   });
 };
