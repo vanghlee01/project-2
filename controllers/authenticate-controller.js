@@ -1,11 +1,15 @@
 var Cryptr = require("cryptr");
 var cryptr = new Cryptr("myTotalySecretKey");
 var connection = require("../config/config");
+var express = require("express");
+var app = express();
+var exphbs = require("express-handlebars");
+app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+app.set("view engine", "handlebars");
 
 module.exports.authenticate = function(req, res) {
   var username = req.body.username_r;
   var password = req.body.password_r;
-  console.log(password, username);
 
   connection.query(
     "SELECT * FROM accounts WHERE username  = ?",
@@ -20,14 +24,10 @@ module.exports.authenticate = function(req, res) {
         if (results.length > 0) {
           var decryptedString = cryptr.decrypt(results[0].password);
 
-          console.log(decryptedString);
           if (password == decryptedString) {
-            // res.json({
-            //     status:true,
-            //     message:'successfully authenticated'
+            res.render("example", { user: req.body.username_r });
 
-            // })
-            res.redirect("main");
+            // console.log(username+ "chacking id working")
           } else {
             res.json({
               status: false,
