@@ -1,3 +1,5 @@
+
+
 var Cryptr = require("cryptr");
 var cryptr = new Cryptr("myTotalySecretKey");
 var connection = require("../config/config");

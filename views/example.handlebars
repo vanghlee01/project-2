@@ -31,51 +31,61 @@
             {{!-- <form class="col s6 offset-s3" id="updateplan" class="button-size" action="/controllers/survey-controller" method="POST"> --}}
          <form class="col s6 offset-s3" action="/controllers/survey-controller" method="POST">
           {{!-- <form class="col s12" action="/controllers/survey-controller" method="POST"> --}}
+                
                 <div class="row">
                     <div class="input-field col s6">
-                        <input  type="text" class="validate">
+                          <input required type="text" name="username" value=  {{{user}}} readonly  >
+                        <label id="first_name"  for="first_name">username</label>
+                    </div>
+                </div>
+                
+                
+                <div class="row">
+                    <div class="input-field col s6">
+                          <input required type="text" name="first_name" >
                         <label id="first_name"  for="first_name">First Name</label>
                     </div>
                 </div>
                 <div class="row">
                       <div class="input-field col s6">
-                        <input id="last_name" type="text" class="validate">
+                            <input required type="text" name="last_name" >
                         <label for="last_name">Last Name</label>
                     </div>
                 </div>
                 <div class="row">
                     <div class="input-field col s12">
-                        <input id="email" type="email" class="validate">
+                         <input required type="text" name="email" >
                         <label for="email">Email</label>
                     </div>
                 </div>
                 <div class="row">
                     <div class="input-field col s12">
-                        <input id="origin" type="text" class="validate">
+                                  <input required type="text" name="origin" >
                         <label for="origin">Origin</label>
                     </div>
                 </div>
                 <div class="row">
                     <div class="input-field col s12">
-                        <input id="destination" type="text" class="validate">
+                         <input required type="text" name="destination" >
                         <label for="destination">Destination</label>
                     </div>
                 </div>
                 <div class="row">
                     <div class="input-field col s12">
-                        <input id="begin-trip" type="text" class="datepicker">
+                         <input required type="text" name="begintrip" >
                         <label for="begintrip">Begin Trip</label>
                     </div>
                 </div>
                  <div class="row">
                     <div class="input-field col s6">
-                        <input id="end-trip" type="text" class="datepicker">
+                         <input required type="text" name="endtrip" >
                         <label for="begintrip">End Trip</label>
                     </div>
                     
                 </div>
         <div class="row">
                 <label for="group-size">Group Size</label>
+                
                 <div id="test-slider">
                         <p class="range-field">
                             <input type="range" id="group-size" min="0" max="50" />
