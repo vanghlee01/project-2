@@ -9,7 +9,7 @@
   },
   "test": {
     "username": "root",
-    "password": "root",
+    "password": "",
     "database": "exampledb",
     "host": "localhost",
     "dialect": "mysql",
@@ -18,7 +18,7 @@
   },
   "ci": {
     "username": "root",
-    "password": "root",
+    "password": "",
     "database": "testdb",
     "host": "127.0.0.1",
     "socketPath": "~travis/.my.cnf",
