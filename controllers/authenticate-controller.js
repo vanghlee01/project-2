@@ -30,6 +30,7 @@ module.exports.authenticate = function(req, res) {
 
           console.log(decryptedString);
           if (password === decryptedString) {
+             res.render("example", { user: req.body.username_r });
             // res.json({
             //     status:true,
             //     message:'successfully authenticated'
