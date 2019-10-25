@@ -62,13 +62,13 @@
                         <input id="end-trip" type="text" class="datepicker">
                         <label for="begintrip">End Trip</label>
                     </div>
-                    <script>
+                    <!-- <script>
                         document.addEventListener("DOMContentLoaded", function () {
                             var elems = document.querySelectorAll(".datepicker");
                             var instances = M.Datepicker.init(elems, options);
                             instances(elems, options);
                         });
-                    </script>
+                    </script> -->
                 </div>
                 <label for="group-size">Group Size</label>
                 <div id="test-slider">
@@ -86,15 +86,17 @@
         </div>
         <div class="row">
             <div class="col s12 center">
-                <a href="./surveyplan-test.html"><button class="btn waves-effect waves-light" type="submit"
-                        name="action">Submit
-                        <i class="material-icons right">send</i>
-                    </button></a>
+                <!-- <a href="./surveyplan-test.html"> -->
+                <button class="unique btn waves-effect waves-light" type="submit" name="action">Submit
+                    <i class="material-icons right">send</i>
+                </button>
+                <!-- </a> -->
             </div>
         </div>
     </div>
     <br>
     <br>
+    <img id="destination-image" src="https://media.gettyimages.com/photos/eiffel-tower-in-paris-france-picture-id924894324?s=612x612" style="width: 350px; height: 250px;">
 
     <footer class="page-footer grey">
         <style>
@@ -153,7 +155,39 @@
         </div>
     </footer>
 
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <script>
+        console.log("this is connected & running");
+
+        $(document).on("click", ".btn", function () {
+            // This needs to pull the destination
+            var destination = $("#destination").val().trim();
+            console.log(destination);
+
+            var queryURL = "https://pixabay.com/api/?key=14031716-ee5fc1d1564bb90e3420570a5&q=" +
+                destination + "&image_type=photo&safesearch=true&order=popular&category=places&category=travel&totalHits=1&fullHDURL";
+
+            $.ajax({
+                url: queryURL,
+                method: "GET"
+            })
+                .then(function (response) {
+                    var results = response.hits[0].largeImageURL;
+                    console.log(results);
+                    var photo = results;
+                    console.log(photo);
+
+                    var destinationImage = $("#destination-image");
+                    destinationImage.attr("src", photo);
+                });
+        });
+
+    </script>
+
+
 </body>
 
 </html>
