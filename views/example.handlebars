@@ -1,22 +1,29 @@
 
 
-<body>
-      <div id="username"style="position:fixed;right:20%;color:green;" >
-          {{#if user}}
-               <h5>Welcome back  {{{user}}} !</h5>
-            {{else}}
-                <p>Please <a href='/'>Log In</a></p>
-            {{/if}}
-                
-                
-      
-      </div>
+
+     <div class="nav-wrapper black" style="color:antiquewhite;" >
+                {{#if user}}
+                    <h5>Welcome back  {{{user}}} !</h5>
+                    <br/>
+                        <div class="row " style="position:fixed;right:20px;top:10px;">
+                        <a class="btn btn-info btn-lg" class="glyphicon glyphicon-log-ou" href="/" style=" width:auto;">log out</a>
+            </div>
+                    {{else}}
+                                 <h4><p>Please <a href='/'>Log In</a></p></h4>
+                    {{/if}}
+                    
+                <div class="row " style="position:fixed;right:150px;top:10px;">
+                    <form  action="/controllers/profile-controller" method="post">
+                        <input type="hidden"  type="hidden"   name="username" value=  {{{user}}} >
+                                                
+                        <button class="btn btn-info btn-lg"  class="glyphicon glyphicon-log-ou" type="submit" style=" width:auto;" >Profile </button>
+                     </form>
+              </div>
+       </div>  
     <div class="container">
 
         
-        <a class="btn btn-info btn-lg" class="glyphicon glyphicon-log-ou" href="/"
-            style=" width:auto;">log out</a>
-            <p id="demo"></p>
+     
         <div class="row">
             <div class="col s12 center">
                 <h1 class="center grey-text">Trip Planner!</h1>
@@ -34,7 +41,7 @@
                 
                 <div class="row">
                     <div class="input-field col s6">
-                          <input required type="text" name="username" value=  {{{user}}} readonly  >
+                          <input readonly required type="text" name="username" value=  {{{user}}} >
                         <label id="first_name"  for="first_name">username</label>
                     </div>
                 </div>

@@ -5,6 +5,8 @@ var bodyParser = require("body-parser");
 var authenticateController = require("../controllers/authenticate-controller");
 var registerController = require("../controllers/register-controller");
 var surveycontroller = require("../controllers/survey-controller");
+var profileController = require("../controllers/profile-controller");
+
 
 module.exports = function(app) {
   app.use(
@@ -29,17 +31,16 @@ module.exports = function(app) {
 
     console.log(req.user);
   });
-  app.get("/controllers/surveyplan", function(req, res) {
-    res.render("surveyplan", { title: "Home", userData: req.user });
 
-    app.get("/controllers/survey-controller", function(req, res) {
-      res.render("surveyplan", { title: "survey", userData: req.user });
 
-      console.log(req.user);
-    });
+    app.get("/profile", function(req, res) {
+      res.render("profile", { title: "survey", userData: req.user });
 
     console.log(req.user + "before survay");
   });
+
+
+
   app.get("/surveyplan", function(req, res) {
     res.render("surveyplan", { title: "Home", userData: req.user });
 
@@ -47,28 +48,11 @@ module.exports = function(app) {
   });
 
   console.log(authenticateController);
+
+ app.post("/controllers/authenticate-controller",  authenticateController.authenticate);
   app.post("/controllers/register-controller", registerController.register);
-  app.post(
-    "/controllers/authenticate-controller",
-    authenticateController.authenticate
-  );
-  app.post("/controllers/register-controller", registerController.register);
-  app.post(
-    "/controllers/authenticate-controller",
-    authenticateController.authenticate
-  );
+  app.post("/controllers/profile-controller", profileController.profile);
   app.post("/controllers/survey-controller", surveycontroller.survey);
 
-  app.get("/home", function(request, response) {
-    if (request.session.loggedin) {
-      response.send("Welcome back, " + request.session.username + "!");
-    } else {
-      response.send("Please login to view this page!");
-    }
-    response.end();
-  });
-
-  app.get("*", function(req, res) {
-    res.render("404");
-  });
+  
 };

@@ -8,6 +8,10 @@ var app = express();
 var exphbs = require("express-handlebars");
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
+var alert=require('alert-node');
+
+
+
 module.exports.authenticate = function(req, res) {
  var username = req.body.username_r;
  var password = req.body.password_r;
@@ -27,16 +31,22 @@ module.exports.authenticate = function(req, res) {
            res.render("example", { user: req.body.username_r });
            // console.log(username+ "chacking id working")
          } else {
-           res.json({
-             status: false,
-             message: "Email and password does not match"
-           });
+          //  res.json({
+          //    status: false,
+          //    message: "Email and password does not match"
+          //  });
+           res.render("auth");
+           alert('Email and password does not match')
          }
        } else {
-         res.json({
-           status: false,
-           message: "User Name does not exits"
-         });
+        //  res.json({
+        //    status: false,
+           
+        //    message: "User Name does not exits"
+        //  });
+        res.render("auth");
+        alert('User name does not exits!')
+        
        }
      }
    }

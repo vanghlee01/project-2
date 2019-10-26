@@ -14,6 +14,7 @@ module.exports.register = function(req, res) {
     created_at: today,
     updated_at: today
   };
+  
 
   console.log(accounts);
   connection.query("INSERT INTO accounts SET ?", accounts, function(
