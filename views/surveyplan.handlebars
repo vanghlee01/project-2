@@ -99,25 +99,26 @@
                     </div>
                 </div>
 
-                <div class="card">
-                    <div class="card-image waves-effect waves-block waves-light">
-                        <img class="activator" id="event-image">
-                    </div>
-                    <div class="card-content">
-                        <span class="card-title activator grey-text text-darken-4">Card Title<i
-                                class="material-icons right">more_vert</i></span>
-                        <p><a href="#">This is a link</a></p>
-                    </div>
-                    <div class="card-reveal">
-                        <span class="card-title grey-text text-darken-4" id="event_name">Card Title<i
-                                class="material-icons right">close</i></span>
-                        <p style="font-size: 10pt;" id="venue_name"></p>
-                        <p style="font-size: 10pt;" id="venue_address"></p>
-                        <p style="font-size: 10pt;" id="location_name"></p>
-                        <p style="font-size: 10pt;" id="start_time"></p>
+                <div class="row">
+                    <div class="card col s4">
+                        <div class="card-image waves-effect waves-block waves-light">
+                            <img class="activator" id="event-image">
+                        </div>
+                        <div class="card-content">
+                            <span class="card-title activator grey-text text-darken-4" id="event_name">Card Title<i
+                                    class="material-icons right">more_vert</i></span>
+                            <p><a href="#">This is a link</a></p>
+                        </div>
+                        <div class="card-reveal">
+                            <span class="card-title grey-text text-darken-4" id="event_name2">Card Title<i
+                                    class="material-icons right">close</i></span>
+                            <p style="font-size: 10pt;" id="venue_name"></p>
+                            <p style="font-size: 10pt;" id="venue_address"></p>
+                            <p style="font-size: 10pt;" id="location_name"></p>
+                            <p style="font-size: 10pt;" id="start_time"></p>
+                        </div>
                     </div>
                 </div>
-
 
                 <div class="divider"></div>
 
@@ -161,161 +162,77 @@
     <br>
     <br>
     <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
 
 
-    <footer class="page-footer grey">
-        <style>
-            body {
-                display: flex;
-                min-height: 100vh;
-                flex-direction: column;
-            }
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-            main {
-                flex: 1 0 auto;
-            }
-        </style>
-        <div class="container">
-            <div class="row">
-                <div class="col l4 offset-l1 s12">
-                    <h5 class="white-text">Them-Crooked-Vultures</h5>
-                    <p class="grey-text text-lighten-4">We'd love to hear reviews on your trip! Maybe your plan will be
-                        used for another party</p>
-                </div>
-                <div class="col l2 offset-l1 s3">
-                    <h5 class="white-text">Browse</h5>
-                    <ul>
-                        <!-- Take you to the home page -->
-                        <li><a class="grey-text text-lighten-3" href="#!">Trip Planner Home</a></li>
-                        <!-- Take you to the page to display all trips - pagination -->
-                        <li><a class="grey-text text-lighten-3" href="#!">Plans by other users</a></li>
-                        <!-- Take you to a page to display your destinations -->
-                        <li><a class="grey-text text-lighten-3" href="#!">Destinations</a></li>
-                        <!-- Display a page with info to do at all locations -->
-                        <li><a class="grey-text text-lighten-3" href="#!">Credits</a></li>
-                    </ul>
-                </div>
-                <div class="col l2 offset-l1 s3">
-                    <h5 class="white-text">Help</h5>
-                    <ul>
-                        <!-- Answer FAQs people have -->
-                        <li><a class="grey-text text-lighten-3" href="#!">FAQ</a></li>
-                        <!-- Do we put in a privacy Policy -->
-                        <li><a class="grey-text text-lighten-3" href="#!">Privacy Policy</a></li>
-                        <!-- Do we put in a Cookie Policy -->
-                        <li><a class="grey-text text-lighten-3" href="#!">Cookie Policy</a></li>
-                        <!-- Do we put in a Copyright Policy -->
-                        <li><a class="grey-text text-lighten-3" href="#!">Copyright Policy</a></li>
-                        <!-- Do we put in Terms of Use? -->
-                        <li><a class="grey-text text-lighten-3" href="#!">Terms of Use</a></li>
-                    </ul>
-                </div>
-            </div>
-            <link rel="stylesheet"
-                href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script>
+        $(document).ready(function () {
 
-            <script>
-                $(document).ready(function () {
+            $(document).on("click", ".btn", function () {
+                var parser, xmlDoc;
+                var singer = $("#event_name2").val().trim();
+                console.log(singer);
 
-                    $(document).on("click", ".btn", function () {
-                        var parser, xmlDoc;
-                        var singer = $("#event_name2").val().trim();
-                        console.log(singer);
+                var queryURL1 = "https://pixabay.com/api/?key=14031716-ee5fc1d1564bb90e3420570a5&q=" +
+                    singer + "&image_type=photo&safesearch=true&order=popular&category=places&totalHits=1&fullHDURL";
+                var queryURL2 = "https://community-eventful.p.rapidapi.com/events/search?keywords=" + singer + "&app_key=q2Qg27LVgj8fNJsB";
+                var settings = {
+                    "async": true,
+                    "crossDomain": true,
+                    "url": queryURL2,
+                    // "url": "https://community-eventful.p.rapidapi.com/events/search?keywords=shawn%20mendes&app_key=q2Qg27LVgj8fNJsB",
+                    "method": "GET",
+                    "headers": {
+                        "x-rapidapi-host": "community-eventful.p.rapidapi.com",
+                        "x-rapidapi-key": "69ce8a3b37msh84834038fac1addp1d1a99jsn88d57080377b"
+                    }
+                }
 
-                        var queryURL1 = "https://pixabay.com/api/?key=14031716-ee5fc1d1564bb90e3420570a5&q=" +
-                            singer + "&image_type=photo&safesearch=true&order=popular&category=places&totalHits=1&fullHDURL";
-                        var queryURL2 = "https://community-eventful.p.rapidapi.com/events/search?keywords=" + singer + "&app_key=q2Qg27LVgj8fNJsB";
-                        var settings = {
-                            "async": true,
-                            "crossDomain": true,
-                            "url": queryURL2,
-                            // "url": "https://community-eventful.p.rapidapi.com/events/search?keywords=shawn%20mendes&app_key=q2Qg27LVgj8fNJsB",
-                            "method": "GET",
-                            "headers": {
-                                "x-rapidapi-host": "community-eventful.p.rapidapi.com",
-                                "x-rapidapi-key": "69ce8a3b37msh84834038fac1addp1d1a99jsn88d57080377b"
-                            }
-                        }
+                $.ajax({
+                    url: queryURL1,
+                    method: "GET"
+                }).then(function (resp1) {
+                    $.ajax(settings)
+                        .then(function (resp2) {
+                            var results = resp1;
+                            console.log(resp1);
+                            var photo = results.hits[0].largeImageURL;
 
-                        $.ajax({
-                            url: queryURL1,
-                            method: "GET"
-                        }).then(function (resp1) {
-                            $.ajax(settings)
-                                .then(function (resp2) {
-                                    var results = resp1;
-                                    console.log(resp1);
-                                    var photo = results.hits[0].largeImageURL;
+                            var destinationImage = $("#event-image");
+                            destinationImage.attr("src", photo);
+                            // destinationImage.attr("style", "height: 250px; width:250px;")
 
-                                    var destinationImage = $("#event-image");
-                                    destinationImage.attr("src", photo);
-                                    destinationImage.attr("style", "height: 250px; width:250px;")
+                            console.log(resp2);
+                            console.log(resp2.childNodes[0].nodeValue);
+                            console.log(resp2.getElementsByTagName("name")[0].childNodes[0].nodeValue);
+                            console.log(resp2.getElementsByTagName("venue_name")[0].childNodes[0].nodeValue);
+                            console.log(resp2.getElementsByTagName("venue_address")[0].childNodes[0].nodeValue);
+                            console.log(resp2.getElementsByTagName("city_name")[0].childNodes[0].nodeValue);
+                            console.log(resp2.getElementsByTagName("country_name")[0].childNodes[0].nodeValue);
+                            console.log(resp2.getElementsByTagName("start_time")[0].childNodes[0].nodeValue);
+                            // console.log(resp2.getElementsByTagName("stop_time")[0].childNodes[0].nodeValue);
 
-                                    console.log(resp2);
-                                    console.log(resp2.childNodes[0].nodeValue);
-                                    console.log(resp2.getElementsByTagName("name")[0].childNodes[0].nodeValue);
-                                    console.log(resp2.getElementsByTagName("venue_name")[0].childNodes[0].nodeValue);
-                                    console.log(resp2.getElementsByTagName("venue_address")[0].childNodes[0].nodeValue);
-                                    console.log(resp2.getElementsByTagName("city_name")[0].childNodes[0].nodeValue);
-                                    console.log(resp2.getElementsByTagName("country_name")[0].childNodes[0].nodeValue);
-                                    console.log(resp2.getElementsByTagName("start_time")[0].childNodes[0].nodeValue);
-                                    // console.log(resp2.getElementsByTagName("stop_time")[0].childNodes[0].nodeValue);
+                            document.getElementById("event_name").innerHTML =
+                                resp2.getElementsByTagName("name")[0].childNodes[0].nodeValue;
 
-                                    document.getElementById("event_name").innerHTML = "Event Name: " +
-                                        resp2.getElementsByTagName("name")[0].childNodes[0].nodeValue;
+                            document.getElementById("event_name2").innerHTML = "Perfomer: " +
+                                resp2.getElementsByTagName("name")[0].childNodes[0].nodeValue;
 
-                                    document.getElementById("venue_name").innerHTML = "Venue: " +
-                                        resp2.getElementsByTagName("venue_name")[0].childNodes[0].nodeValue;
+                            document.getElementById("venue_name").innerHTML = "Venue: " +
+                                resp2.getElementsByTagName("venue_name")[0].childNodes[0].nodeValue;
 
-                                    document.getElementById("venue_address").innerHTML = "Venue Address: " +
-                                        resp2.getElementsByTagName("venue_address")[0].childNodes[0].nodeValue + " " + resp2.getElementsByTagName("city_name")[0].childNodes[0].nodeValue + ", " + resp2.getElementsByTagName("country_name")[0].childNodes[0].nodeValue;;
+                            document.getElementById("venue_address").innerHTML = "Venue Address: " +
+                                resp2.getElementsByTagName("venue_address")[0].childNodes[0].nodeValue + " " + resp2.getElementsByTagName("city_name")[0].childNodes[0].nodeValue + ", " + resp2.getElementsByTagName("country_name")[0].childNodes[0].nodeValue;;
 
-                                    document.getElementById("start_time").innerHTML = "Date: " +
-                                        resp2.getElementsByTagName("start_time")[0].childNodes[0].nodeValue;
-                                });
+                            document.getElementById("start_time").innerHTML = "Date & Time: " +
+                                resp2.getElementsByTagName("start_time")[0].childNodes[0].nodeValue;
                         });
-                    });
-                })
+                });
+            });
+        })
 
-            </script>
+    </script>
 </body>
 
 </html>
