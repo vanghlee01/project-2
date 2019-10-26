@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="">
+</head>
+
+<body>
+
+    <p id="demo"></p>
+    <p id="demo3"></p>
+    <p id="demo2"></p>
+
+    <script>
+
+
+
+        var parser, xmlDoc;
+        var text = "<bookstore><book>" +
+            "<title>Everyday Italian</title>" +
+            "<author>Giada De Laurentiis</author>" +
+            "<year>2005</year>" +
+            "</book></bookstore>";
+
+        parser = new DOMParser();
+        xmlDoc = parser.parseFromString(text, "text/xml");
+
+        document.getElementById("demo").innerHTML =
+            xmlDoc.getElementsByTagName("title")[0].childNodes[0].nodeValue;
+
+        document.getElementById("demo3").innerHTML =
+            xmlDoc.getElementsByTagName("bookstore")[0].childNodes[0].nodeValue;
+
+        document.getElementById("demo2").innerHTML =
+            xmlDoc.getElementsByTagName("year")[0].childNodes[0].nodeValue;
+
+
+    </script>
+</body>
+
+</html>
