@@ -1,15 +1,7 @@
 {
   "name": "handlebars-boilerplate",
   "version": "1.0.0",
-<<<<<<< HEAD
-  "description": "Project 2 Starter",
-=======
-<<<<<<< HEAD
   "description": "## Application Heroku Link The link to [Name of our App](https://them-crooked-vultures.herokuapp.com/)",
-=======
-  "description": "Project 2 Starter",
->>>>>>> 988853751b4750a0e17da33a1f487f7738fbe670
->>>>>>> 74c9aefd68ce42f7dace8f92f440131ae543edf1
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
@@ -20,32 +12,17 @@
   "license": "ISC",
   "dependencies": {
     "cryptr": "^4.0.2",
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> 74c9aefd68ce42f7dace8f92f440131ae543edf1
-    "dotenv": "^8.2.0",
     "eslint": "^6.5.1",
-=======
     "custom-env": "^1.0.2",
     "dotenv": "^8.2.0",
     "env": "0.0.2",
->>>>>>> 988853751b4750a0e17da33a1f487f7738fbe670
     "express": "^4.17.1",
     "express-handlebars": "^3.1.0",
     "express-session": "^1.17.0",
     "husky": "^3.0.5",
     "lint-staged": "^9.4.0",
     "mysql": "^2.17.1",
-<<<<<<< HEAD
     "mysql2": "^1.7.0",
-=======
-<<<<<<< HEAD
-    "mysql2": "^1.7.0",
-=======
-    "mysql2": "^1.6.5",
->>>>>>> 988853751b4750a0e17da33a1f487f7738fbe670
->>>>>>> 74c9aefd68ce42f7dace8f92f440131ae543edf1
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
     "react-scripts": "^3.1.2",
