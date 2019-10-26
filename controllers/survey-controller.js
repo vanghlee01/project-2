@@ -32,7 +32,7 @@ module.exports.survey = function(req, res) {
       //   data: results,
       //   message: "user registered sucessfully"
       // });
-      res.redirect("surveyplan");
+      res.redirect("/surveyplan");
     }
   });
 };
