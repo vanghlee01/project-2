@@ -12,10 +12,7 @@
   "license": "ISC",
   "dependencies": {
     "cryptr": "^4.0.2",
-<<<<<<< HEAD
-=======
     "dotenv": "^8.2.0",
->>>>>>> origin
     "eslint": "^6.5.1",
     "custom-env": "^1.0.2",
     "env": "0.0.2",
