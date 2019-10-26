@@ -1,5 +1,5 @@
 {
-  "name": "handlebars-boilerplate",
+  "name": "them-crooked-vultures",
   "version": "1.0.0",
   "description": "## Application Heroku Link The link to [Name of our App](https://them-crooked-vultures.herokuapp.com/)",
   "main": "server.js",
@@ -12,9 +12,12 @@
   "license": "ISC",
   "dependencies": {
     "cryptr": "^4.0.2",
+<<<<<<< HEAD
+=======
+    "dotenv": "^8.2.0",
+>>>>>>> origin
     "eslint": "^6.5.1",
     "custom-env": "^1.0.2",
-    "dotenv": "^8.2.0",
     "env": "0.0.2",
     "express": "^4.17.1",
     "express-handlebars": "^3.1.0",
@@ -28,7 +31,9 @@
     "react-scripts": "^3.1.2",
     "sequelize": "^5.19.1",
     "sequelize-cli": "^5.5.1",
-    "typescript": "^3.6.4"
+    "typescript": "^3.6.4",
+    "pug": "^2.0.4",
+    "alert-node": "^2.0.1"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^2.5.0",

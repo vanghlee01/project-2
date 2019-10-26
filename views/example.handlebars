@@ -1,22 +1,32 @@
 
 
-<body>
-      <div id="username"style="position:fixed;right:20%;color:green;" >
-          {{#if user}}
-               <h5>Well come back  {{{user}}} !</h5>
-            {{else}}
-                <p>Please <a href='/'>Log In</a></p>
-            {{/if}}
-                
-                
-      
-      </div>
+
+     <div class="nav-wrapper black" style="color:antiquewhite;" >
+                {{#if user}}
+                    <h5>Welcome back  {{{user}}} !</h5>
+                    <br/>
+                        <div class="row " style="position:fixed;right:20px;top:10px;">
+                        <a class="btn btn-info btn-lg" class="glyphicon glyphicon-log-ou" href="/" style=" width:auto;">log out</a>
+
+            </div>
+
+                 <div class="row " style="position:fixed;right:150px;top:10px;">
+                    <form  action="/controllers/profile-controller" method="post">
+                        <input type="hidden"  type="hidden"   name="username" value=  {{{user}}} >
+                                                
+                        <button class="btn btn-info btn-lg"  class="glyphicon glyphicon-log-ou" type="submit" style=" width:auto;" >Profile </button>
+                     </form>
+              </div>
+       </div>  
+                    {{else}}
+                                 <h4><p>Please <a href='/'>Log In</a></p></h4>
+                    {{/if}}
+        </div>            
+       
     <div class="container">
 
         
-        <a class="btn btn-info btn-lg" class="glyphicon glyphicon-log-ou" href="/"
-            style=" width:auto;">log out</a>
-            <p id="demo"></p>
+     
         <div class="row">
             <div class="col s12 center">
                 <h1 class="center grey-text">Trip Planner!</h1>
@@ -31,51 +41,61 @@
             {{!-- <form class="col s6 offset-s3" id="updateplan" class="button-size" action="/controllers/survey-controller" method="POST"> --}}
          <form class="col s6 offset-s3" action="/controllers/survey-controller" method="POST">
           {{!-- <form class="col s12" action="/controllers/survey-controller" method="POST"> --}}
+                
                 <div class="row">
                     <div class="input-field col s6">
-                        <input  type="text" class="validate">
+                          <input readonly required type="text" name="username" value=  {{{user}}} >
+                        <label id="first_name"  for="first_name">username</label>
+                    </div>
+                </div>
+                
+                
+                <div class="row">
+                    <div class="input-field col s6">
+                          <input required type="text" name="first_name" >
                         <label id="first_name"  for="first_name">First Name</label>
                     </div>
                 </div>
                 <div class="row">
                       <div class="input-field col s6">
-                        <input id="last_name" type="text" class="validate">
+                            <input required type="text" name="last_name" >
                         <label for="last_name">Last Name</label>
                     </div>
                 </div>
                 <div class="row">
                     <div class="input-field col s12">
-                        <input id="email" type="email" class="validate">
+                         <input required type="text" name="email" >
                         <label for="email">Email</label>
                     </div>
                 </div>
                 <div class="row">
                     <div class="input-field col s12">
-                        <input id="origin" type="text" class="validate">
+                                  <input required type="text" name="origin" >
                         <label for="origin">Origin</label>
                     </div>
                 </div>
                 <div class="row">
                     <div class="input-field col s12">
-                        <input id="destination" type="text" class="validate">
+                         <input required type="text" name="destination" >
                         <label for="destination">Destination</label>
                     </div>
                 </div>
                 <div class="row">
                     <div class="input-field col s12">
-                        <input id="begin-trip" type="text" class="datepicker">
+                         <input required type="text" name="begintrip" >
                         <label for="begintrip">Begin Trip</label>
                     </div>
                 </div>
                  <div class="row">
                     <div class="input-field col s6">
-                        <input id="end-trip" type="text" class="datepicker">
+                         <input required type="text" name="endtrip" >
                         <label for="begintrip">End Trip</label>
                     </div>
                     
                 </div>
         <div class="row">
                 <label for="group-size">Group Size</label>
+                
                 <div id="test-slider">
                         <p class="range-field">
                             <input type="range" id="group-size" min="0" max="50" />
