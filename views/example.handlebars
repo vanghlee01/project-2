@@ -7,12 +7,10 @@
                     <br/>
                         <div class="row " style="position:fixed;right:20px;top:10px;">
                         <a class="btn btn-info btn-lg" class="glyphicon glyphicon-log-ou" href="/" style=" width:auto;">log out</a>
+
             </div>
-                    {{else}}
-                                 <h4><p>Please <a href='/'>Log In</a></p></h4>
-                    {{/if}}
-                    
-                <div class="row " style="position:fixed;right:150px;top:10px;">
+
+                 <div class="row " style="position:fixed;right:150px;top:10px;">
                     <form  action="/controllers/profile-controller" method="post">
                         <input type="hidden"  type="hidden"   name="username" value=  {{{user}}} >
                                                 
@@ -20,6 +18,11 @@
                      </form>
               </div>
        </div>  
+                    {{else}}
+                                 <h4><p>Please <a href='/'>Log In</a></p></h4>
+                    {{/if}}
+        </div>            
+       
     <div class="container">
 
         
