@@ -19,8 +19,7 @@ $(document).ready(function() {
       url: queryURL,
       method: "GET"
     }).then(function(response) {
-      var results = response.data;
-      var photo = results.hits.largeImageURL;
+      var photo = response.hits[0].largeImageURL;
 
       var destinationImage = $("#destination-image");
       destinationImage.attr("src", photo);
