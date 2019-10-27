@@ -1,113 +1,143 @@
+<body>
+    <div id="username" style="position:fixed;right:20%;color:green;">
+        {{#if user}}
+        <h5>Welcome back {{{user}}} !</h5>
+        {{else}}
+        <p>Please <a href='/'>Log In</a></p>
+        {{/if}}
 
-<body>
-      <div id="username"style="position:fixed;right:20%;color:green;" >
-          {{#if user}}
-               <h5>Welcome back  {{{user}}} !</h5>
-            {{else}}
-                <p>Please <a href='/'>Log In</a></p>
-            {{/if}}
-            
-                
-      
-      </div>
-<body>
-    <!--Section: navbar w/mobility-->
-    <div class="navbar-fixed">
-        <nav class="teal">
-            <div class="container">
-                <div class="nav-wrapper">
-                    <a href="#" class="center brand-logo trip-planner">Profile Update</a>
-                    <a href="#" data-target="mobile-nav"></a>
-                     <a class="btn btn-info btn-lg" class="glyphicon glyphicon-log-ou" href="/"
-            style=" width:auto;">log out</a>
-            <p id="demo"></p
-                </div>
-            </div>
-        </nav>
+
+
     </div>
 
-    <!--Section: Profile update-->
+    <body>
+        <!--Section: navbar w/mobility-->
+        <div class="navbar-fixed">
+            <nav class="teal">
+                <div class="container">
+                    <div class="nav-wrapper" style="line-height: 21px;">
+                        <a href=" #" style="font-size: 40pt;" class="center brand-logo trip-planner">Profile Update</a>
+                        <a href="#" data-target="mobile-nav"></a>
+                        <a class="btn btn-info btn-lg" class="glyphicon glyphicon-log-ou" href="/"
+                            style=" width:auto;">log out</a>
+                        <p id="demo"></p </div> </div> </nav> </div> <!--Section: Profile update-->
+                        <div class="container">
+                            <div class="section">
+                                <div class="row">
 
-    <div class="container">
-        <div class="row">
-            <div class="col s12 m7">
-
-                <div class="card horizontal">
-                    <div class="card-image">
-                        
-                    <h5> {{username}} </h5>
-                
-           
-                        <img src="../public/img/Landscape-Mobile-min.jpg">
-                    </div>
-                    <div class="card-stacked">
-                        <div class="card-content">
-                            <p>Update Info</p>
+                                    <div class="col s12 m4">
+                                        <div class="card horizontal">
+                                            <div class="card-image">
+                                                <img src="http://localhost:3000/img/Landscape-Mobile-min.jpg">     
+                                            </div>
+                                            <div class="card-content">
+                                                <a class="btn-floating halfway-fab red"><i
+                                                        class="material-icons">add</i></a>
+                                                        <p style="font-size: 20pt;">Activities</p>
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="card-action">
-                            <a href="#">This is a link</a>
-                            <div class="card-reveal">
-                                <span class="card-title grey-text text-darken-4">Card Title<i
-                                        class="material-icons right">close</i></span>
-                                <p>Here is some more information about this product that is only revealed once clicked
-                                    on.</p>
+                        {{!-- 
+                        <div class="container">
+                            <div class="row">
+                                <div class="col s12 m4">
+                                    
+                                    <div class="card horizontal">
+                                        <a class="btn red btn-floating halfway-fab">+</a>
+                                        <div class="card-image">
+                                            <img src="http://localhost:3000/img/Landscape-Mobile-min.jpg">
+
+                                        </div>
+
+                                        <div class="card-stacked">
+                                            <div class="card-content">
+                                                <p style="font-size: 20pt;">Update Info</p>
+                                            </div>
+                                            <div class="card-action">
+
+                                                <!--<h5> {{username}} </h5>-->
+
+                                                <div class="card-reveal">
+                                                    <span class="card-title grey-text text-darken-4">Card Title<i
+                                                            class="material-icons right">close</i></span>
+                                                    <p>Here is some more information about this product that is only
+                                                        revealed once clicked
+                                                        on.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div> --}}
+                        <!--Section for Current trip-->
+                        <div class="container">
+                            <div class="section">
+                                <div class="row">
+                                    <div class="col s12 m4">
+
+                                        <div class="card horizontal">
+
+     
+                                            <div class="card-image">
+                                                <img src="http://localhost:3000/img/Landscape-Mobile-min.jpg">
+                                            
+                                            </div>
+                                            <div class="card-stacked">
+ 
+                                                <div class="card-content">
+                                                    <p style="font-size: 17pt;">Current Trip</p>
+                                                </div>
+                                                <div class="card-action">
+                                                  <a href="#">Trip 1</a>
+                                                  <br>
+                                                  <a href="#">Trip 2</a>
+                                                  <br>
+                                                  <a href="#">Trip 3</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
+                    <!--Section for Older trips-->
+                    <div class="container">
+                        <div class="section">
+                            <div class="row">
+                                <div class="col s12 m4">
 
+                                    <div class="card horizontal">
+                                        <div class="card-image">
+                                            <img src="http://localhost:3000/img/Landscape-Mobile-min.jpg">
+                                        </div>
+                                        <div class="card-stacked">
+                                            <div class="card-content">
+                                                <p style="font-size: 20pt;">Past trips</p>
+                                            </div>
+                                            <div class="card-action">
+                                                <a href="#">Trip 1</a>
+                                                  <br>
+                                                  <a href="#">Trip 2</a>
+                                                  <br>
+                                                  <a href="#">Trip 3</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
 
-        </div>
-    </div>
-    <!--Section for Current trip-->
-    <div class="container">
-        <div class="row">
-            <div class="col s12 m7">
-
-                <div class="card horizontal">
-                    <div class="card-image">
-                        <img src="../public/img/Landscape-Mobile-min.jpg">
-                    </div>
-                    <div class="card-stacked">
-                        <div class="card-content">
-                            <p>Current Trip</p>
-                        </div>
-                        <div class="card-action">
-                            <a href="#">This is a link</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-        </div>
-    </div>
-    <!--Section for Older trips-->
-    <div class="container">
-        <div class="row">
-            <div class="col s12 m7">
-
-                <div class="card horizontal">
-                    <div class="card-image">
-                        <img src="../public/img/Landscape-Mobile-min.jpg">
-                    </div>
-                    <div class="card-stacked">
-                        <div class="card-content">
-                            <p>Past trips</p>
-                        </div>
-                        <div class="card-action">
-                            <a href="#">This is a link</a>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div>
+                    <script
+                        src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    </body>
 
-
-        </div>
-    </div>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-</body>
-
-</html>
+    </html>

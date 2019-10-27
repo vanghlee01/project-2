@@ -13,7 +13,7 @@ module.exports.profile = function(req, res) {
       if (err) throw err;
       console.log(result);
   
-        res.render('profile', { username: result, message: 'Hello there!' })
+        res.render('profile')
   
       console.log(username);
     
