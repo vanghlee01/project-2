@@ -1,30 +1,38 @@
-     <div class ="row">
-          {{#if user}}
-               <h5>Welcome back  {{{user}}} !</h5>
-                <a class="btn btn-info btn-lg" class="glyphicon glyphicon-log-ou" href="/"
-            style=" width:auto;">log out</a>
-            {{else}}
-                <p>Please <a href='/'>Log In</a></p>
-            {{/if}}
-                
-      </div>
-      
-    <div class="container">
-<form  action="/controllers/profile-controller" method="post">
-                <input type="hidden"  type="hidden" name="username" value=  {{{user}}} >
-                 <button class="btn waves-effect waves-light" type="submit">Profile </button>
+<nav>
+    <div class="nav-wrapper black">
+        <a href="/" class="brand-logo" style="y:-20"><i class="material-icons">wb_sunny</i>Day-Dreamer</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li style="padding-top: 17px;">
+                {{#if user}}
+                <h5>Welcome back {{{user}}} !</h5>
+                <a class="btn btn-info btn-lg" class="glyphicon glyphicon-log-ou" href="/" style=" width:auto;">log
+                    out</a>
+                {{else}}
+                <a class="btn right teal accent-1 black-text" href='/'>Log In</a>
+                {{/if}}
+            </li>
+            <li>
+                <form action="/controllers/profile-controller" method="post">
+                    <input type="hidden" type="hidden" name="username" value={{{user}}}>
+                    <button class="btn waves-effect waves-light teal accent-1 black-text" type="submit">Profile
+                    </button>
                 </form>
-        
-  
-        <div class="row">
-            <div class="col s12 center">
-                <h1 class="center grey-text">Trip Planner!</h1>
-                <p class="center grey-text ">Now that we know where you are going - build out the details here!</p>
-            </div>
-        </div>
-    
+            </li>
+        </ul>
+    </div>
+</nav>
 
-    <!-- Float this container Left -->
+
+<div class="container">
+    <div class="row">
+        <div class="col s12 center">
+            <h1 class="center grey-text trip-planner">Day-Dreamer!</h1>
+            <p class="center grey-text ">Now that we know where you are going - build out the details here!</p>
+        </div>
+    </div>
+</div>
+
+{{!-- <!-- Float this container Left -->
     <div class="container" style="position: fixed; bottom: 50%; left: 10%; top: 20%;">
         <div class="row col s3">
             <div class="card col s3 left">
@@ -50,178 +58,142 @@
                 </div>
             </div>
         </div>
+    </div> --}}
+
+<!--Flights parallax-->
+<div id="index-banner" class="parallax-container" style="height: 200px;">
+    <div class="section no-pad-bot">
+        <h5 class="col-s5 offset-s7 parallaxText">Flights</h5>
     </div>
-
-
-
-    <div class="container">
+    <div class="parallax"><img src="/img/airplane2.jpg" alt="airplane image">
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="divider"></div>
+        <br>
         <div class="row">
-            <div class="col s9 right">
-                <div class="divider"></div>
-                <div class="row">
-                    <div class="right">
-                        <h5 class="col-s5 offset-s7">Flights</h5>
-                        
-                    </div>
-                </div>
-
-                <div class="divider"></div>
-
-                <div class="row">
-                    <div class="right">
-                        <h5 class="col-s5 offset-s7">Hotels</h5>
-                    </div>
-                </div>
-
-                <div class="divider"></div>
-
-                <div class="row">
-                    <div class="right">
-                        <h5 class="col-s5 offset-s7">Food</h5>
-                    </div>
-                </div>
-
-                <div class="divider"></div>
-
-                <div class="row">
-                    <div class="right">
-                        <h5 class="col-s5 offset-s7">Events</h5>
-                    </div>
-                </div>
-
-                <div class="divider"></div>
-
-                <div class="row">
-                    <div class="right">
-                        <h5 class="col-s5 offset-s7">Site Seeing</h5>
-                    </div>
-                </div>
-            </div>
+            <div data-skyscanner-widget="SearchWidget"></div>
         </div>
     </div>
+</div>
 
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
+<!--Hotels parallax-->
+<div id="index-banner" class="parallax-container" style="height: 200px;">
+    <div class="section no-pad-bot">
+        <h5 class="col-s5 offset-s7 parallaxText">Hotels</h5>
+    </div>
+    <div class="parallax"><img src="/img/hotel.jpg" alt="hotel hallway image">
+    </div>
+</div>
+<div class="container">
+    <div class="divider"></div>
+    <br>
+    <div class="row center">
+        <a class="btn teal accent-1 black-text" href=''>Search Hotels</a>
+    </div>
+</div>
 
+<!--Food parallax-->
+<div id="index-banner" class="parallax-container" style="height: 200px;">
+    <div class="section no-pad-bot">
+        <h5 class="col-s5 offset-s7 parallaxText">Food</h5>
+    </div>
+    <div class="parallax"><img src="/img/food.jpg" alt="food table image">
+    </div>
+</div>
+<div class="container">
+    <div class="divider"></div>
+    <br>
+    <div class="row center">
+        <table id="restaurantTable">
+            <tbody id="restaurantBody">
+            </tbody>
+        </table>
+        {{!-- <a class="btn teal accent-1 black-text foodbtn" href=''>Search Restaurants</a> --}}
+    </div>
+</div>
 
-    <footer class="page-footer grey">
-        <style>
-            body {
-                display: flex;
-                min-height: 100vh;
-                flex-direction: column;
-            }
+<!--Events parallax-->
+<div id="index-banner" class="parallax-container" style="height: 200px;">
+    <div class="section no-pad-bot">
+        <h5 class="col-s5 offset-s7 parallaxText">Events</h5>
+    </div>
+    <div class="parallax"><img src="/img/celebration.jpg" alt="fireworks image">
+    </div>
+</div>
+<div class="container">
+    <div class="divider"></div>
+    <br>
+    <div class="row center">
+        <!--Events stuff here-->
+    </div>
+</div>
 
-            main {
-                flex: 1 0 auto;
-            }
-        </style>
-        <div class="container">
-            <div class="row">
-                <div class="col l4 offset-l1 s12">
-                    <h5 class="white-text">Them-Crooked-Vultures</h5>
-                    <p class="grey-text text-lighten-4">We'd love to hear reviews on your trip! Maybe your plan will be
-                        used for another party</p>
-                </div>
-                <div class="col l2 offset-l1 s3">
-                    <h5 class="white-text">Browse</h5>
-                    <ul>
-                        <!-- Take you to the home page -->
-                        <li><a class="grey-text text-lighten-3" href="#!">Trip Planner Home</a></li>
-                        <!-- Take you to the page to display all trips - pagination -->
-                        <li><a class="grey-text text-lighten-3" href="#!">Plans by other users</a></li>
-                        <!-- Take you to a page to display your destinations -->
-                        <li><a class="grey-text text-lighten-3" href="#!">Destinations</a></li>
-                        <!-- Display a page with info to do at all locations -->
-                        <li><a class="grey-text text-lighten-3" href="#!">Credits</a></li>
-                    </ul>
-                </div>
-                <div class="col l2 offset-l1 s3">
-                    <h5 class="white-text">Help</h5>
-                    <ul>
-                        <!-- Answer FAQs people have -->
-                        <li><a class="grey-text text-lighten-3" href="#!">FAQ</a></li>
-                        <!-- Do we put in a privacy Policy -->
-                        <li><a class="grey-text text-lighten-3" href="#!">Privacy Policy</a></li>
-                        <!-- Do we put in a Cookie Policy -->
-                        <li><a class="grey-text text-lighten-3" href="#!">Cookie Policy</a></li>
-                        <!-- Do we put in a Copyright Policy -->
-                        <li><a class="grey-text text-lighten-3" href="#!">Copyright Policy</a></li>
-                        <!-- Do we put in Terms of Use? -->
-                        <li><a class="grey-text text-lighten-3" href="#!">Terms of Use</a></li>
-                    </ul>
-                </div>
-            </div>
-            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!--Events parallax-->
+<div id="index-banner" class="parallax-container" style="height: 200px;">
+    <div class="section no-pad-bot">
+        <h5 class="col-s5 offset-s7 parallaxText">Sight Seeing</h5>
+    </div>
+    <div class="parallax"><img src="/img/sights.jpg" alt="mountains image">
+    </div>
+</div>
+<div class="container">
+    <div class="divider"></div>
+    <br>
+    <div class="row center">
+        <!--Events stuff here-->
+    </div>
+</div>
 
 
-</body>
+<script type="text/javascript">
+    //ATTENTION!!!===============================================
+    $.ajax({
+        url: "/api/getDestination",
+        method: "GET"
+    }).then(function (response) {
+        //Needs to get the destionation and replace it in the london area to pass through the API call. 
+        var place = "London"
+        queryURL = "https://developers.zomato.com/api/v2.1/locations?query=" + place + "&apikey=8b2f1efc94c42842b627309b15cae91b";
+        $.ajax({
+            url: queryURL,
+            method: "GET"
+        }).then(function (response) {
+            var entityId = response.location_suggestions[0].entity_id;
 
-</html>
+            //start postDataRow fct def
+            $("#restaurantTable").append(" <thead> <tr> <th>Name</th><th>Rating</th><th>Address</th><th>Website</th></tr></thead>");
+
+            function postDataRow(name, rating, address, url) {
+                $("#restaurantBody")
+                    .append(`<tr> <td>${name}</td>
+                        <td>${rating}</td>
+                        <td>${address}</td>
+                        <td><a href=${url}>Link to Website</a></td></tr>`);
+            } //end postDataRow fct def
+
+            queryURL = "https://developers.zomato.com/api/v2.1/search?entity_id=" + entityId + "&sort=rating&apikey=8b2f1efc94c42842b627309b15cae91b";
+            $.ajax({
+                url: queryURL,
+                method: "GET"
+            }).then(function (response) {
+                var restaurantArray = response.restaurants;
+                for (var i = 0; i < 5; i++) {
+                    var testRestaurant = response.restaurants[i];
+                    var testName = testRestaurant.restaurant.name;
+                    var testRating = testRestaurant.restaurant.user_rating.aggregate_rating;
+                    var testAddress = testRestaurant.restaurant.location.address;
+                    var testURL = testRestaurant.restaurant.url;
+                    //calling appending fct
+                    postDataRow(testName, testRating, testAddress, testURL);
+                }//end loop
+            });
+        });
+
+    });
+
+
+</script>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
