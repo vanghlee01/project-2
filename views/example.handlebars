@@ -31,25 +31,29 @@
 </head>
 
      <div class="nav-wrapper black" style="color:antiquewhite;" >
-                {{#if user}}
+         <div class="row s12">
+                             {{#if user}}
                     <h5>Welcome back  {{{user}}} !</h5>
-                    <br/>
-                        <div class="row " style="position:fixed;right:20px;top:10px;">
+                    
+                        <div class="navbar">
                         <a class="btn btn-info btn-lg" class="glyphicon glyphicon-log-ou" href="/" style=" width:auto;">log out</a>
-
-            </div>
-
-                 <div class="row " style="position:fixed;right:150px;top:10px;">
+                        </div>
+                            <div class="navbar " >
                     <form  action="/controllers/profile-controller" method="post">
-                        <input type="hidden"  type="hidden"   name="username" value=  {{{user}}} >
+                        <input type="hidden"  type="hidden"   name="username"  value=  {{{user}}} >
                                                 
-                        <button class="btn btn-info btn-lg"  class="glyphicon glyphicon-log-ou" type="submit" style=" width:auto;" >Profile </button>
+                        <button class="btn btn-info btn-lg"  class="glyphicon glyphicon-log-ou" type="submit" style=" width:auto;"  >Profile </button>
+                    
                      </form>
-              </div>
-       </div>  
-                    {{else}}
+                    </div> 
+                      {{else}}
                                  <h4><p>Please <a href='/'>Log In</a></p></h4>
                     {{/if}}
+               
+                      
+              </div>
+       </div>  
+                  
         </div>            
        
     <div class="container">
@@ -68,12 +72,12 @@
  <form  action="/controllers/survey-controller" method="post">
      <div class="row">
             {{!-- <form class="col s6 offset-s3" id="updateplan" class="button-size" action="/controllers/survey-controller" method="POST"> --}}
-         <form class="col s6 offset-s3" action="/controllers/survey-controller" method="POST">
+         {{!-- <form class="col s6 offset-s3" action="/controllers/survey-controller" method="POST"> --}}
           {{!-- <form class="col s12" action="/controllers/survey-controller" method="POST"> --}}
                 
                 <div class="row">
                     <div class="input-field col s6">
-                          <input readonly required type="text" name="username" value=  {{{user}}} >
+                          <input readonly required type="text" name="username" placeholder="Guest " value=  {{{user}}} >
                         <label id="first_name"  for="first_name">username</label>
                     </div>
                 </div>
@@ -93,7 +97,7 @@
                 </div>
                 <div class="row">
                     <div class="input-field col s12">
-                         <input required type="text" name="email" >
+                         <input required type="email" name="email" >
                         <label for="email">Email</label>
                     </div>
                 </div>
@@ -111,13 +115,13 @@
                 </div>
                 <div class="row">
                     <div class="input-field col s12">
-                         <input required type="text" name="begintrip" >
+                         <input required type="date" name="begintrip" >
                         <label for="begintrip">Begin Trip</label>
                     </div>
                 </div>
                  <div class="row">
                     <div class="input-field col s6">
-                         <input required type="text" name="endtrip" >
+                         <input required type="date" name="endtrip" >
                         <label for="begintrip">End Trip</label>
                     </div>
                     
@@ -213,3 +217,37 @@
 
 
 
+<style>
+    /* Style the navbar */
+#navbar {
+  overflow: hidden;
+  background-color: #333;
+}
+
+/* Navbar links */
+#navbar a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px;
+  text-decoration: none;
+}
+
+/* Page content */
+.content {
+  padding: 16px;
+}
+
+/* The sticky class is added to the navbar with JS when it reaches its scroll position */
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+/* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
+.sticky + .content {
+  padding-top: 60px;
+}
+</style>

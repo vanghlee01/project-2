@@ -18,45 +18,58 @@
                 <div class="nav-wrapper">
                     <a href="#" class="center brand-logo trip-planner">Profile Update</a>
                     <a href="#" data-target="mobile-nav"></a>
-                     <a class="btn btn-info btn-lg" class="glyphicon glyphicon-log-ou" href="/"
-            style=" width:auto;">log out</a>
-            <p id="demo"></p
+                     <a class="btn btn-info btn-lg" class="glyphicon glyphicon-log-ou" href="/" style=" width:auto;position:fixed;top:10px;">log out</a>
+          
                 </div>
             </div>
         </nav>
     </div>
 
     <!--Section: Profile update-->
-
-    <div class="container">
+ <div class="container">
         <div class="row">
-            <div class="col s12 m7">
-                  {{#each username}}
-                    <h5> {{first_name}} </h5>
-                        {{/each}}
+            <div class="col s12 m12">
+
                 <div class="card horizontal">
                     <div class="card-image">
-                        {{#each username}}
-                    <h5> {{username}} </h5>
-                        {{/each}}
-                      {{#each username}}
-                    <h5> {{first_name}} </h5>
-                        {{/each}}
-                        <img src="../public/img/Landscape-Mobile-min.jpg">
+                        <img src="http://localhost:3000/img/boarding-pass-euro-ticket-69866.jpg">
                     </div>
                     <div class="card-stacked">
                         <div class="card-content">
-                            <p>Update Info</p>
+                        <div id="overflowTest">  
+                               <a href="#">Upcoming travel plans </a>   
+                         <table class="table">
+                            <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Trip Begin</th>
+                                {{!-- <th>Trip End</th> --}}
+                                <th>Origin</th>
+                                <th>Destnation</th>
+                                 <th>Created By</th>
+                            </tr>
+                            </thead>
+                              {{#each username}}
+                            <tbody>
+                            <tr>
+                                <td>{{this.id}}</td>
+                                <td>{{this.begintrip}}</td>
+                                 {{!-- <td>{{this.begintrip}}</td> --}}
+                                <td>{{this.origin}}</td>
+                                <td>{{this.destination}}</td>
+                                 <td>{{this.first_name}}</td>
+                                <td> <button data-id="{{this.id}}" class="delquote">Delete</button></td>
+                              {{/each}}
+                            </tr>
+                            </tbody>
+
+                        </table>
+                          </div>
+                          </div>
+                             </div>
+                         </div>
                         </div>
-                        <div class="card-action">
-                            <a href="#">This is a link</a>
-                            <div class="card-reveal">
-                                <span class="card-title grey-text text-darken-4">Card Title<i
-                                        class="material-icons right">close</i></span>
-                                <p>Here is some more information about this product that is only revealed once clicked
-                                    on.</p>
-                            </div>
-                        </div>
+                       
                     </div>
                 </div>
             </div>
@@ -67,19 +80,49 @@
     <!--Section for Current trip-->
     <div class="container">
         <div class="row">
-            <div class="col s12 m7">
+            <div class="col s12 m12">
 
                 <div class="card horizontal">
                     <div class="card-image">
-                        <img src="../public/img/Landscape-Mobile-min.jpg">
+                        <img src="http://localhost:3000/img/boarding-pass-euro-ticket-69866.jpg">
                     </div>
                     <div class="card-stacked">
                         <div class="card-content">
-                            <p>Current Trip</p>
+                        <div id="overflowTest">  
+                             <a href="#">Previous travel plans </a>     
+                         <table class="table">
+                            <thead>
+                            <tr>
+
+                                 <th>ID</th>
+                                <th>Trip Begin</th>
+                                {{!-- <th>Trip End</th> --}}
+                                <th>Origin</th>
+                                <th>Destnation</th>
+                                 <th>Created By</th>
+                            </tr>
+                            </thead>
+                              {{#each username}}
+                            <tbody>
+                            <tr>
+                                <td>{{this.id}}</td>
+                                <td>{{this.begintrip}}</td>
+                                 {{!-- <td>{{this.begintrip}}</td> --}}
+                                <td>{{this.origin}}</td>
+                                <td>{{this.destination}}</td>
+                                 <td>{{this.first_name}}</td>
+                                <td> <button data-id="{{this.id}}" class="delquote">Delete</button></td>
+                              {{/each}}
+                            </tr>
+                            </tbody>
+
+                        </table>
+                          </div>
+                          </div>
+                             </div>
+                         </div>
                         </div>
-                        <div class="card-action">
-                            <a href="#">This is a link</a>
-                        </div>
+                      
                     </div>
                 </div>
             </div>
@@ -87,22 +130,51 @@
 
         </div>
     </div>
-    <!--Section for Older trips-->
+    <!--Section for Current trip-->
     <div class="container">
         <div class="row">
-            <div class="col s12 m7">
+            <div class="col s12 m12">
 
                 <div class="card horizontal">
                     <div class="card-image">
-                        <img src="../public/img/Landscape-Mobile-min.jpg">
+                        <img src="http://localhost:3000/img/Landscape-Mobile-min.jpg">
                     </div>
                     <div class="card-stacked">
                         <div class="card-content">
-                            <p>Past trips</p>
+                        <div id="overflowTest"> 
+                                 <a href="#">Wish travel plans </a>   
+                         <table class="table">
+                            <thead>
+                            <tr>
+                             <th>ID</th>
+                                <th>Trip Begin</th>
+                                {{!-- <th>Trip End</th> --}}
+                                <th>Origin</th>
+                                <th>Destnation</th>
+                                 <th>Created By</th>
+                            </tr>
+                            </thead>
+                              {{#each username}}
+                            <tbody>
+                            <tr>
+                                <td>{{this.id}}</td>
+                                <td>{{this.begintrip}}</td>
+                                 {{!-- <td>{{this.begintrip}}</td> --}}
+                                <td>{{this.origin}}</td>
+                                <td>{{this.destination}}</td>
+                                 <td>{{this.first_name}}</td>
+                                <td> <button data-id="{{this.id}}" class="delquote">Delete</button></td>
+                              {{/each}}
+                            </tr>
+                            </tbody>
+
+                        </table>
+                          </div>
+                          </div>
+                             </div>
+                         </div>
                         </div>
-                        <div class="card-action">
-                            <a href="#">This is a link</a>
-                        </div>
+                     
                     </div>
                 </div>
             </div>
@@ -110,8 +182,41 @@
 
         </div>
     </div>
-
+  
+   
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </body>
 
 </html>
+
+<style>
+#overflowTest {
+  background: rgb(55, 57, 55);
+  color: white;
+  padding: 5px;
+  width: 100%;
+  height:300px;
+  overflow: scroll;
+  border: 1px solid #ccc;
+}
+</style>
+<script>
+
+      
+    $(".delquote").on("click", function(event) {
+      var id = $(this).data("id");
+  
+      // Send the DELETE request.
+      $.ajax("/api/quotes/" + id, {
+        type: "DELETE"
+      }).then(
+        function() {
+          console.log("deleted id ", id);
+          // Reload the page to get the updated list
+          location.reload();
+        }
+      );
+    });
+    
+
+</script>
