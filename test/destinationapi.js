@@ -18,9 +18,11 @@ $(document).ready(function() {
     $.ajax({
       url: queryURL,
       method: "GET"
-    }).then(function(response) {
-      var results = response.data;
-      var photo = results.hits.largeImageURL;
+    })
+      .then(function (response) {
+        var photo = response.hits[0].largeImageURL;
+
+
 
       var destinationImage = $("#destination-image");
       destinationImage.attr("src", photo);
