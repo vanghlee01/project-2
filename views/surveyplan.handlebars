@@ -110,7 +110,7 @@
             <tbody id="restaurantBody">
             </tbody>
         </table>
-        <a class="btn teal accent-1 black-text foodbtn" href=''>Search Restaurants</a>
+        {{!-- <a class="btn teal accent-1 black-text foodbtn" href=''>Search Restaurants</a> --}}
     </div>
 </div>
 
@@ -240,54 +240,53 @@
         });
 
         //ATTENTION!!!===============================================
-        $(document).on("click", ".foodbtn", function () {
-            stopPropagation();
+
+        $.ajax({
+            url: "/api/getDestination",
+            method: "GET"
+        }).then(function (response) {
+            //Needs to get the destionation and replace it in the london area to pass through the API call. 
+            var place = "London"
+            queryURL = "https://developers.zomato.com/api/v2.1/locations?query=" + place + "&apikey=8b2f1efc94c42842b627309b15cae91b";
             $.ajax({
-                url: "/api/getDestination",
+                url: queryURL,
                 method: "GET"
             }).then(function (response) {
-                //Needs to get the destionation and replace it in the london area to pass through the API call. 
-                var place = "London"
-                queryURL = "https://developers.zomato.com/api/v2.1/locations?query=" + place + "&apikey=8b2f1efc94c42842b627309b15cae91b";
+                var entityId = response.location_suggestions[0].entity_id;
+
+                //start postDataRow fct def
+                $("#restaurantTable").append(" <thead> <tr> <th>Name</th><th>Rating</th><th>Address</th><th>Website</th></tr></thead>");
+
+                function postDataRow(name, rating, address, url) {
+                    $("#restaurantBody")
+                        .append(`<tr> <td>${name}</td>
+                        <td>${rating}</td>
+                        <td>${address}</td>
+                        <td><a href=${url}>Link to Website</a></td></tr>`);
+                } //end postDataRow fct def
+
+                queryURL = "https://developers.zomato.com/api/v2.1/search?entity_id=" + entityId + "&sort=rating&apikey=8b2f1efc94c42842b627309b15cae91b";
                 $.ajax({
                     url: queryURL,
                     method: "GET"
                 }).then(function (response) {
-                    var entityId = response.location_suggestions[0].entity_id;
-
-                    //start postDataRow fct def
-                    $("#restaurantTable").append(" <thead> <tr> <th>Name</th><th>Rating</th><th>Address</th><th>Website</th></tr></thead>");
-
-                    function postDataRow(name, rating, address, url) {
-                        $("#restaurantBody")
-                            .append(`<tr> <td>${name}</td>
-                        <td>${rating}</td>
-                        <td>${address}</td>
-                        <td><a href=${url}>Link to Website</a></td></tr>`);
-                    } //end postDataRow fct def
-
-                    queryURL = "https://developers.zomato.com/api/v2.1/search?entity_id=" + entityId + "&sort=rating&apikey=8b2f1efc94c42842b627309b15cae91b";
-                    $.ajax({
-                        url: queryURL,
-                        method: "GET"
-                    }).then(function (response) {
-                        var restaurantArray = response.restaurants;
-                        for (var i = 0; i < 5; i++) {
-                            var testRestaurant = response.restaurants[i];
-                            var testName = testRestaurant.restaurant.name;
-                            var testRating = testRestaurant.restaurant.user_rating.aggregate_rating;
-                            var testAddress = testRestaurant.restaurant.location.address;
-                            var testURL = testRestaurant.restaurant.url;
-                            //calling appending fct
-                            postDataRow(testName, testRating, testAddress, testURL);
-                        }//end loop
-                    });
+                    var restaurantArray = response.restaurants;
+                    for (var i = 0; i < 5; i++) {
+                        var testRestaurant = response.restaurants[i];
+                        var testName = testRestaurant.restaurant.name;
+                        var testRating = testRestaurant.restaurant.user_rating.aggregate_rating;
+                        var testAddress = testRestaurant.restaurant.location.address;
+                        var testURL = testRestaurant.restaurant.url;
+                        //calling appending fct
+                        postDataRow(testName, testRating, testAddress, testURL);
+                    }//end loop
                 });
-
             });
-        });
 
+        });
     });
+
+
 
 </script>
 
