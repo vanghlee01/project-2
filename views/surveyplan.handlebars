@@ -1,39 +1,46 @@
-<nav>
-    <div class="nav-wrapper black">
-        <a href="/" class="brand-logo" style="y:-20"><i class="material-icons">wb_sunny</i>Day-Dreamer</a>
-        <ul id="nav-mobile" class="right hide-on-med-and-down">
-            <li style="padding-top: 17px;">
+
+<title>W3.CSS</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+{{!-- <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-amber.css"> --}}
+{{!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> --}}
+<!-- Latest compiled and minified CSS -->
+{{!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"> --}}
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+
+
+  <div class="nav-wrapper black" style="color:antiquewhite;" >
                 {{#if user}}
-                <h5>Welcome back {{{user}}} !</h5>
-                <a class="btn btn-info btn-lg" class="glyphicon glyphicon-log-ou" href="/" style=" width:auto;">log
-                    out</a>
-                {{else}}
-                <a class="btn right teal accent-1 black-text" href='/'>Log In</a>
-                {{/if}}
-            </li>
-            <li>
-                <form action="/controllers/profile-controller" method="post">
-                    <input type="hidden" type="hidden" name="username" value={{{user}}}>
-                    <button class="btn waves-effect waves-light teal accent-1 black-text" type="submit">Profile
-                    </button>
-                </form>
-            </li>
-        </ul>
-    </div>
-</nav>
+                    <h5>Welcome back  {{{user}}} !</h5>
+                    <br/>
+                        <div class="row " style="position:fixed;right:20px;top:10px;">
+                        <a class="btn btn-info btn-lg" class="glyphicon glyphicon-log-ou" href="/" style=" width:auto;">log out</a>
 
+            </div>
 
-<div class="container">
-    <div class="row">
-        <div class="col s12 center">
-            <h1 class="center grey-text trip-planner">Day-Dreamer!</h1>
-            <p class="center grey-text ">Now that we know where you are going - build out the details here!</p>
-        </div>
-    </div>
-</div>
+                 <div class="row " style="position:fixed;right:150px;top:10px;">
+                    <form  action="/controllers/profile-controller" method="post">
+                        <input type="hidden"  type="hidden"   name="username"  value=  {{{user}}} >
+                                                
+                        <button class="btn btn-info btn-lg"  class="glyphicon glyphicon-log-ou" type="submit" style=" width:auto;"  >Profile </button>
+                     </form>
+              </div>
+       </div>  
+                    {{else}}
+                                 <h4><p>Please <a href='/'>Log In</a></p></h4>
+                    {{/if}}
+        </div>            
+       
+      
+    <!-- Float this container Left -->
+    {{!-- <div class="container" style="position: fixed; bottom: 50%; left: 10%; top: 20%;">
 
-{{!-- <!-- Float this container Left -->
-    <div class="container" style="position: fixed; bottom: 50%; left: 10%; top: 20%;">
         <div class="row col s3">
             <div class="card col s3 left">
                 <div class="card-image waves-effect waves-block waves-light">
@@ -58,236 +65,189 @@
                 </div>
             </div>
         </div>
-    </div> --}}
 
-<!--Flights parallax-->
-<div id="index-banner" class="parallax-container" style="height: 200px;">
-    <div class="section no-pad-bot">
-        <h5 class="col-s5 offset-s7 parallaxText">Flights</h5>
     </div>
-    <div class="parallax"><img src="/img/airplane2.jpg" alt="airplane image">
-    </div>
-</div>
-<div class="container">
-    <div class="row">
-        <div class="divider"></div>
-        <br>
-        <div class="row">
-            <div data-skyscanner-widget="SearchWidget"></div>
-        </div>
-    </div>
-</div>
 
-<!--Hotels parallax-->
-<div id="index-banner" class="parallax-container" style="height: 200px;">
-    <div class="section no-pad-bot">
-        <h5 class="col-s5 offset-s7 parallaxText">Hotels</h5>
-    </div>
-    <div class="parallax"><img src="/img/hotel.jpg" alt="hotel hallway image">
-    </div>
-</div>
-<div class="container">
-    <div class="divider"></div>
-    <br>
-    <div class="row center">
-        <a class="btn teal accent-1 black-text" href=''>Search Hotels</a>
-    </div>
-</div>
+ --}}
 
-<!--Food parallax-->
-<div id="index-banner" class="parallax-container" style="height: 200px;">
-    <div class="section no-pad-bot">
-        <h5 class="col-s5 offset-s7 parallaxText">Food</h5>
-    </div>
-    <div class="parallax"><img src="/img/food.jpg" alt="food table image">
-    </div>
-</div>
-<div class="container">
-    <div class="divider"></div>
-    <br>
-    <div class="row center">
-        <table id="restaurantTable">
-            <tbody id="restaurantBody">
-            </tbody>
-        </table>
-        {{!-- <a class="btn teal accent-1 black-text foodbtn" href=''>Search Restaurants</a> --}}
-    </div>
-</div>
 
-<!--Events parallax-->
-<div id="index-banner" class="parallax-container" style="height: 200px;">
-    <div class="section no-pad-bot">
-        <h5 class="col-s5 offset-s7 parallaxText">Events</h5>
-    </div>
-    <div class="parallax"><img src="/img/celebration.jpg" alt="fireworks image">
-    </div>
-</div>
-<div class="container">
-    <div class="divider"></div>
-    <br>
-    <div class="row center">
+<div class="w3-row-padding w3-theme">
 
-        <div class="center">
-            <div class="input-field col s12">
-                <input value="Paris" id="event_name2" type="text" class="validate">
-                <label class="active" for="event_name2">Search Events by Location</label>
-                <a class="waves-effect waves-light btn teal accent-1 black-text">Search</a>
+            <div class="col s12 center">
+                <h2>Trip Planner!</h2>
+                <p class="center ">Now that we know where you are going - build out the details here!</p>
             </div>
-        </div>
-        <div class="row">
-            <div class="card col s4">
+        
+<div class="w3-third w3-section">
+<div class="w3-card-4">
+                <div class="card col s3 left">
                 <div class="card-image waves-effect waves-block waves-light">
-                    <img class="activator" id="event-image">
+                    <img class="activator" id="destination-image"
+                        src="https://media.gettyimages.com/photos/eiffel-tower-in-paris-france-picture-id924894324?s=612x612">
                 </div>
                 <div class="card-content">
-                    <span class="card-title activator grey-text text-darken-4" id="event_name">Your Event Here<i
+                    <span class="card-title activator grey-text text-darken-4">See Details Here<i
                             class="material-icons right">more_vert</i></span>
-                    <p><a href="#">Link to event</a></p>
+                    <p><i>trip name goes here</i></p>
                 </div>
                 <div class="card-reveal">
-                    <span class="card-title grey-text text-darken-4" id="event_name2">Event<i
+                    <span class="card-title grey-text text-darken-4"><i></i><i
                             class="material-icons right">close</i></span>
-                    <p style="font-size: 10pt;" id="venue_name"></p>
-                    <p style="font-size: 10pt;" id="venue_address"></p>
-                    <p style="font-size: 10pt;" id="location_name"></p>
-                    <p style="font-size: 10pt;" id="start_time"></p>
+
+                    <!-- Have these fields editable / updateable -->
+                    <p><b>Origin:</b> Minneapolis, MN</p>
+                    <p><b>Destination:</b> Paris, France</p>
+                    <p><b>Group Size:</b> 5</p>
+                    <p><b>Begin Date:</b> 11/11/19</p>
+                    <p><b>End Date:</b> 11/20/19</p>
                 </div>
             </div>
         </div>
     </div>
+
+
+<div class="w3-third w3-section">
+<div class="w3-card-4">
+                <div class="card col s3 left">
+                <div class="card-image waves-effect waves-block waves-light">
+                    <img class="activator" id="destination-image"
+                        src="https://media.gettyimages.com/photos/eiffel-tower-in-paris-france-picture-id924894324?s=612x612">
+                </div>
+                <div class="card-content">
+                    <span class="card-title activator grey-text text-darken-4">See Details Here<i
+                            class="material-icons right">more_vert</i></span>
+                    <p><i>trip name goes here</i></p>
+                </div>
+                <div class="card-reveal">
+                    <span class="card-title grey-text text-darken-4"><i>trip name goes here</i><i
+                            class="material-icons right">close</i></span>
+
+                    <!-- Have these fields editable / updateable -->
+                    <p><b>Origin:</b> Minneapolis, MN</p>
+                    <p><b>Destination:</b> Paris, France</p>
+                    <p><b>Group Size:</b> 5</p>
+                    <p><b>Begin Date:</b> 11/11/19</p>
+                    <p><b>End Date:</b> 11/20/19</p>
+                </div>
+            </div>
+        </div>
+    
+
 </div>
 
-<!--Events parallax-->
-<div id="index-banner" class="parallax-container" style="height: 200px;">
-    <div class="section no-pad-bot">
-        <h5 class="col-s5 offset-s7 parallaxText">Sight Seeing</h5>
-    </div>
-    <div class="parallax"><img src="/img/sights.jpg" alt="mountains image">
+<div class="w3-third w3-section">
+<div  id="overflowTest" class="w3-card-4">
+                <div class="card col s3 left">
+                <div class="card-image waves-effect waves-block waves-light">
+                    <img class="activator" id="destination-image"
+                        src="https://notablelife.com/media/2015/07/resto.jpg">
+                </div>
+                <div class="card-content">
+                    <span class="card-title activator grey-text text-darken-4">Find the best Restaurants<i
+                            class="material-icons right">more_vert</i></span>
+
+                                <input id="destination"    type="hidden"   destination="username"  value=  {{{destination}}} >
+                              
+                            
+                    <p><i>trip name goes her </i></p>
+
+                </div>
+                <div class="card-reveal">
+                     <div class = "message col-md-12"></div> 
+                    <span class="card-title grey-text "><i>Close</i>
+                                                        
+                                  </span>
+<div  id="overflowTest" class="jumbotron jumbotron-billboard text-center">
+	
+	<div class="container pt">
+		
+		<div class="mt-5 text-color">
+			<h4>Find the best Restaurants</h4>
+		</div>
+        	<div class="col-xs-6 pl-0 pr-0">
+				<input id="getText" type="text" class="form-control" placeholder="Enter Restaurant Type">
+				</div>
+				<button id = "getMessage" class = "btn btn-success col-xs-2">Search</button>
+			</div>
+		</div>
+	</div>
+
+	</div>
+	<hr>
+	
+          
+        </div>
     </div>
 </div>
-<div class="container">
-    <div class="divider"></div>
-    <br>
-    <div class="row center">
-        <!--Events stuff here-->
-    </div>
+
 </div>
 
-<script type="text/javascript">
 
-    $(document).ready(function () {
+</body>
+</html>
+<script>
+    $(document).ready(function() {
 
-        $(document).on("click", ".btn", function () {
-            var parser, xmlDoc;
-            var singer = $("#event_name2").val().trim();
-            console.log(singer);
+ $("#getMessage").on("click", function() {
 
-            var queryURL1 = "https://pixabay.com/api/?key=14031716-ee5fc1d1564bb90e3420570a5&q=" +
-                singer + "&image_type=photo&safesearch=true&order=popular&category=places&totalHits=1&fullHDURL";
-            var queryURL2 = "https://community-eventful.p.rapidapi.com/events/search?keywords=" + singer + "&app_key=q2Qg27LVgj8fNJsB";
-            var settings = {
-                "async": true,
-                "crossDomain": true,
-                "url": queryURL2,
-                // "url": "https://community-eventful.p.rapidapi.com/events/search?keywords=shawn%20mendes&app_key=q2Qg27LVgj8fNJsB",
-                "method": "GET",
-                "headers": {
-                    "x-rapidapi-host": "community-eventful.p.rapidapi.com",
-                    "x-rapidapi-key": "69ce8a3b37msh84834038fac1addp1d1a99jsn88d57080377b"
-                }
-            }
+ 
+  var valueSearchBox = $('#getText').val()
+  if (valueSearchBox === "") {
+   return;
+  }
+  select();
+ });
+ //--------------------------------------------------SEARCH BY CITY-----------------------------------------
 
-            $.ajax({
-                url: queryURL1,
-                method: "GET"
-            }).then(function (resp1) {
-                $.ajax(settings)
-                    .then(function (resp2) {
-                        var results = resp1;
-                        console.log(resp1);
-                        var photo = results.hits[0].largeImageURL;
+ function select() {
+  var address = $('#destination').val();
+  var valueSearchBox = $('#getText').val()
+  var searchCity = "&q=" + valueSearchBox;
+  var settings = {
+   "async": true,
+   "crossDomain": true,
+   "url": "https://developers.zomato.com/api/v2.1/search?entity_id=" + address + "&entity_type=city" + searchCity + "&count=20",
+   "method": "GET",
+   "headers": {
+    "user-key": "967e2e08ce22588b1668ae3b432bf765",
+    'Content-Type': 'application/x-www-form-urlencoded'
+   }
+  }
 
-                        var destinationImage = $("#event-image");
-                        destinationImage.attr("src", photo);
-                        // destinationImage.attr("style", "height: 250px; width:250px;")
+  $.getJSON(settings, function(data) {
 
-                        console.log(resp2);
-                        console.log(resp2.childNodes[0].nodeValue);
-                        console.log(resp2.getElementsByTagName("name")[0].childNodes[0].nodeValue);
-                        console.log(resp2.getElementsByTagName("venue_name")[0].childNodes[0].nodeValue);
-                        console.log(resp2.getElementsByTagName("venue_address")[0].childNodes[0].nodeValue);
-                        console.log(resp2.getElementsByTagName("city_name")[0].childNodes[0].nodeValue);
-                        console.log(resp2.getElementsByTagName("country_name")[0].childNodes[0].nodeValue);
-                        console.log(resp2.getElementsByTagName("start_time")[0].childNodes[0].nodeValue);
-                        // console.log(resp2.getElementsByTagName("stop_time")[0].childNodes[0].nodeValue);
+   data = data.restaurants;
+   var html = "";
 
-                        document.getElementById("event_name").innerHTML =
-                            resp2.getElementsByTagName("name")[0].childNodes[0].nodeValue;
+   $.each(data, function(index, value) {
 
-                        document.getElementById("event_name2").innerHTML = "Perfomer: " +
-                            resp2.getElementsByTagName("name")[0].childNodes[0].nodeValue;
-
-                        document.getElementById("venue_name").innerHTML = "Venue: " +
-                            resp2.getElementsByTagName("venue_name")[0].childNodes[0].nodeValue;
-
-                        document.getElementById("venue_address").innerHTML = "Venue Address: " +
-                            resp2.getElementsByTagName("venue_address")[0].childNodes[0].nodeValue + " " + resp2.getElementsByTagName("city_name")[0].childNodes[0].nodeValue + ", " + resp2.getElementsByTagName("country_name")[0].childNodes[0].nodeValue;;
-
-                        document.getElementById("start_time").innerHTML = "Date & Time: " +
-                            resp2.getElementsByTagName("start_time")[0].childNodes[0].nodeValue;
-                    });
-            });
-        });
-
-        //ATTENTION!!!===============================================
-
-        $.ajax({
-            url: "/api/getDestination",
-            method: "GET"
-        }).then(function (response) {
-            //Needs to get the destionation and replace it in the london area to pass through the API call. 
-            var place = "London"
-            queryURL = "https://developers.zomato.com/api/v2.1/locations?query=" + place + "&apikey=8b2f1efc94c42842b627309b15cae91b";
-            $.ajax({
-                url: queryURL,
-                method: "GET"
-            }).then(function (response) {
-                var entityId = response.location_suggestions[0].entity_id;
-
-                //start postDataRow fct def
-                $("#restaurantTable").append(" <thead> <tr> <th>Name</th><th>Rating</th><th>Address</th><th>Website</th></tr></thead>");
-
-                function postDataRow(name, rating, address, url) {
-                    $("#restaurantBody")
-                        .append(`<tr> <td>${name}</td>
-                        <td>${rating}</td>
-                        <td>${address}</td>
-                        <td><a href=${url}>Link to Website</a></td></tr>`);
-                } //end postDataRow fct def
-
-                queryURL = "https://developers.zomato.com/api/v2.1/search?entity_id=" + entityId + "&sort=rating&apikey=8b2f1efc94c42842b627309b15cae91b";
-                $.ajax({
-                    url: queryURL,
-                    method: "GET"
-                }).then(function (response) {
-                    var restaurantArray = response.restaurants;
-                    for (var i = 0; i < 5; i++) {
-                        var testRestaurant = response.restaurants[i];
-                        var testName = testRestaurant.restaurant.name;
-                        var testRating = testRestaurant.restaurant.user_rating.aggregate_rating;
-                        var testAddress = testRestaurant.restaurant.location.address;
-                        var testURL = testRestaurant.restaurant.url;
-                        //calling appending fct
-                        postDataRow(testName, testRating, testAddress, testURL);
-                    }//end loop
-                });
-            });
-
-        });
+    var x = data[index];
+    $.each(x, function(index, value) {
+     var location = x.restaurant.location;
+     var userRating = x.restaurant.user_rating;
+     html += "<div class='data img-rounded'>";
+     html += "<div class='rating'>";
+     html += "<span title='" + userRating.rating_text + "'><p style='color:white;background-color:#" + userRating.rating_color + ";border-radius:4px;border:none;padding:2px 10px 2px 10px;text-align: center;text-decoration:none;display:inline-block;font-size:16px;float:right;'><strong>" + userRating.aggregate_rating + "</strong></p></span><br>";
+     html += "  <strong class='text-info'>" + userRating.votes + " votes</strong>";
+     html += "</div>";
+     html += "<img class='resimg img-rounded' src=" + value.thumb + " alt='Restaurant Image' height='185' width='185'>";
+     html += "<a href=" + value.url + " target='_blank' class='action_link'><h2 style='color:red;'><strong>" + value.name + "</strong></h2></a>";
+     html += "  <strong class='text-primary'>" + location.locality + "</strong><br>";
+     html += "  <h6 style='color:grey;'><strong>" + location.address + "</strong></h6><hr>";
+     html += "  <strong>CUISINES</strong>: " + value.cuisines + "<br>";
+     html += "  <strong>COST FOR TWO</strong>: " + value.currency + value.average_cost_for_two + "<br>";
+     html += "</div><br>";
     });
+   });
+   $(".message").html(html);
+  });
 
-
-
+ }
+ //--------------------------------------------------------------------------------------------------------
+ $("#select_id").change(function() {
+  select();
+ });
+});
 </script>
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
