@@ -8,7 +8,6 @@ var surveycontroller = require("../controllers/survey-controller");
 var profileController = require("../controllers/profile-controller");
 var con = require("../config/config");
 
-
 module.exports = function(app) {
   app.use(
     session({
@@ -33,14 +32,17 @@ module.exports = function(app) {
     console.log(req.user);
   });
 
-
-    app.get("/profile", function(req, res) {
-      res.render("profile", { title: "survey", userData: req.user });
+  app.get("/profile", function(req, res) {
+    res.render("profile", { title: "survey", userData: req.user });
 
     console.log(req.user + "before survay");
   });
 
+  app.get("/example", function(req, res) {
+    res.render("example", { title: "survey", userData: req.user });
 
+    console.log(req.user + "before survay");
+  });
 
   app.get("/surveyplan", function(req, res) {
     res.render("surveyplan", { title: "Home", userData: req.user });
@@ -50,26 +52,27 @@ module.exports = function(app) {
 
   console.log(authenticateController);
 
- app.post("/controllers/authenticate-controller",  authenticateController.authenticate);
+  app.post(
+    "/controllers/authenticate-controller",
+    authenticateController.authenticate
+  );
   app.post("/controllers/register-controller", registerController.register);
   app.post("/controllers/profile-controller", profileController.profile);
   app.post("/controllers/survey-controller", surveycontroller.survey);
 
-
-    app.delete("/api/quotes/:id", function(req, res) {
-      con.query("DELETE FROM survey WHERE id = ?", [req.params.id], function(err, result) {
-        if (err) {
-          // If an error occurred, send a generic server failure
-          return res.status(500).end();
-        }
-        else if (result.affectedRows === 0) {
-          // If no rows were changed, then the ID must not exist, so 404
-          return res.status(404).end();
-        }
-        res.status(200).end();
-    
-      });
+  app.delete("/api/quotes/:id", function(req, res) {
+    con.query("DELETE FROM survey WHERE id = ?", [req.params.id], function(
+      err,
+      result
+    ) {
+      if (err) {
+        // If an error occurred, send a generic server failure
+        return res.status(500).end();
+      } else if (result.affectedRows === 0) {
+        // If no rows were changed, then the ID must not exist, so 404
+        return res.status(404).end();
+      }
+      res.status(200).end();
     });
-    
-  }  
-  
+  });
+};
