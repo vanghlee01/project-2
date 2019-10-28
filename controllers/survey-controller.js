@@ -1,4 +1,8 @@
 var connection = require("../config/config");
+var zomato = require("zomato-api");
+var client = zomato({
+  userKey: "967e2e08ce22588b1668ae3b432bf765"
+});
 
 module.exports.survey = function(req, res) {
   var today = new Date();
@@ -32,7 +36,17 @@ module.exports.survey = function(req, res) {
       //   data: results,
       //   message: "user registered sucessfully"
       // });
-      res.redirect("/surveyplan");
+      // res.redirect("/surveyplan");
+      res.render("surveyplan", { user: req.body.username });
+
+      client.getCategories(null, function(err, result) {
+        if (!err) {
+          console.log(result);
+          res.render("surveyplan", { destination: req.body.destination });
+        } else {
+          console.log(err);
+        }
+      });
     }
   });
 };

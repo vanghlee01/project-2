@@ -1,135 +1,236 @@
-<div id="username" style="position:fixed;right:20%;color:green;">
-    {{#if user}}
-    <h5>Welcome back {{{user}}} !</h5>
-    {{else}}
-    <p>Please <a href='/'>Log In</a></p>
-    {{/if}}
-</div>
-
 <!--Section: navbar w/mobility-->
 <div class="navbar-fixed">
-    <nav class="black">
+    <nav class="teal">
         <div class="container">
-            <div class="nav-wrapper" style="line-height: 21px;">
-                <a href=" #" style="font-size: 40pt;" class="center brand-logo trip-planner">Profile Update</a>
+            <div class="nav-wrapper">
+                <a href="#" class="center brand-logo trip-planner">Profile Update</a>
                 <a href="#" data-target="mobile-nav"></a>
-                <a class="btn btn-info btn-lg" class="glyphicon glyphicon-log-ou" href="/" style=" width:auto;">log
-                    out</a>
-                <p id="demo"></p </div> </div> </nav> </div> <!--Section: Profile update-->
-                <div class="container">
-                    <div class="section">
-                        <div class="row">
+                <a class="btn btn-info btn-lg" class="glyphicon glyphicon-log-ou" href="/"
+                    style=" width:auto;position:fixed;top:10px;">log out</a>
 
-                            <div class="col s12 m4">
-                                <div class="card horizontal">
-                                    <div class="card-image">
-                                        <img src="http://localhost:3000/img/Landscape-Mobile-min.jpg">
-                                    </div>
-                                    <div class="card-content">
-                                        <a class="btn-floating halfway-fab red"><i class="material-icons">add</i></a>
-                                        <p style="font-size: 20pt;">Activities</p>
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-
-                <div class="container">
-                    <div class="row">
-                        <div class="col s12 m4">
-
-                            <div class="card horizontal">
-                                <a class="btn red btn-floating halfway-fab">+</a>
-                                <div class="card-image">
-                                    <img src="http://localhost:3000/img/Landscape-Mobile-min.jpg">
-
-                                </div>
-
-                                <div class="card-stacked">
-                                    <div class="card-content">
-                                        <p style="font-size: 20pt;">Update Info</p>
-                                    </div>
-                                    <div class="card-action">
-
-                                        <!--<h5> {{username}} </h5>-->
-
-                                        <div class="card-reveal">
-                                            <span class="card-title grey-text text-darken-4">Card Title<i
-                                                    class="material-icons right">close</i></span>
-                                            <p>Here is some more information about this product that is only
-                                                revealed once clicked
-                                                on.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!--Section for Current trip-->
-                <div class="container">
-                    <div class="section">
-                        <div class="row">
-                            <div class="col s12 m4">
-
-                                <div class="card horizontal">
-
-
-                                    <div class="card-image">
-                                        <img src="http://localhost:3000/img/Landscape-Mobile-min.jpg">
-
-                                    </div>
-                                    <div class="card-stacked">
-
-                                        <div class="card-content">
-                                            <p style="font-size: 17pt;">Current Trip</p>
-                                        </div>
-                                        <div class="card-action">
-                                            <a href="#">Trip 1</a>
-                                            <br>
-                                            <a href="#">Trip 2</a>
-                                            <br>
-                                            <a href="#">Trip 3</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
-            <!--Section for Older trips-->
-            <div class="container">
-                <div class="section">
-                    <div class="row">
-                        <div class="col s12 m4">
+        </div>
+    </nav>
+</div>
 
-                            <div class="card horizontal">
-                                <div class="card-image">
-                                    <img src="http://localhost:3000/img/Landscape-Mobile-min.jpg">
-                                </div>
-                                <div class="card-stacked">
-                                    <div class="card-content">
-                                        <p style="font-size: 20pt;">Past trips</p>
-                                    </div>
-                                    <div class="card-action">
-                                        <a href="#">Trip 1</a>
-                                        <br>
-                                        <a href="#">Trip 2</a>
-                                        <br>
-                                        <a href="#">Trip 3</a>
-                                    </div>
-                                </div>
-                            </div>
+<!--Section: Profile update-->
+<div class="container">
+    <div class="row">
+        <div class="col s12 m12">
+
+            <div class="card horizontal">
+                <div class="card-image">
+                    <img src="http://localhost:3000/img/boarding-pass-euro-ticket-69866.jpg">
+                </div>
+                <div class="card-stacked">
+                    <div class="card-content">
+                        <div id="overflowTest">
+                            <a href="#">Upcoming travel plans </a>
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Trip Begin</th>
+                                        {{!-- <th>Trip End</th> --}}
+                                        <th>Origin</th>
+                                        <th>Destnation</th>
+                                        <th>Created By</th>
+                                    </tr>
+                                </thead>
+                                {{#each username}}
+                                <tbody>
+                                    <tr>
+                                        <td>{{this.id}}</td>
+                                        <td>{{this.begintrip}}</td>
+                                        {{!-- <td>{{this.begintrip}}</td> --}}
+                                        <td>{{this.origin}}</td>
+                                        <td>{{this.destination}}</td>
+                                        <td>{{this.first_name}}</td>
+                                        <td> <button data-id="{{this.id}}" class="delquote">Delete</button></td>
+                                        {{/each}}
+                                    </tr>
+                                </tbody>
+
+                            </table>
                         </div>
-
                     </div>
                 </div>
             </div>
         </div>
+
+    </div>
+</div>
 </div>
 
+<!--<h5> {{username}} </h5>-->
+
+
+</div>
+</div>
+<!--Section for Current trip-->
+<div class="container">
+    <div class="row">
+        <div class="col s12 m12">
+
+            <div class="card horizontal">
+                <div class="card-image">
+                    <img src="http://localhost:3000/img/boarding-pass-euro-ticket-69866.jpg">
+                </div>
+                <div class="card-stacked">
+                    <div class="card-content">
+                        <div id="overflowTest">
+                            <a href="#">Previous travel plans </a>
+                            <table class="table">
+                                <thead>
+                                    <tr>
+
+                                        <th>ID</th>
+                                        <th>Trip Begin</th>
+                                        {{!-- <th>Trip End</th> --}}
+                                        <th>Origin</th>
+                                        <th>Destnation</th>
+                                        <th>Created By</th>
+                                    </tr>
+                                </thead>
+                                {{#each username}}
+                                <tbody>
+                                    <tr>
+                                        <td>{{this.id}}</td>
+                                        <td>{{this.begintrip}}</td>
+                                        {{!-- <td>{{this.begintrip}}</td> --}}
+                                        <td>{{this.origin}}</td>
+                                        <td>{{this.destination}}</td>
+                                        <td>{{this.first_name}}</td>
+                                        <td> <button data-id="{{this.id}}" class="delquote">Delete</button></td>
+                                        {{/each}}
+                                    </tr>
+                                </tbody>
+
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+</div>
+
+<!--<h5> {{username}} </h5>-->
+
+
+</div>
+</div>
+<!--Section for Current trip-->
+<div class="container">
+    <div class="row">
+        <div class="col s12 m12">
+
+            <div class="card horizontal">
+                <div class="card-image">
+                    <img src="http://localhost:3000/img/Landscape-Mobile-min.jpg">
+                </div>
+                <div class="card-stacked">
+                    <div class="card-content">
+                        <div id="overflowTest">
+                            <a href="#">Wish travel plans </a>
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Trip Begin</th>
+                                        {{!-- <th>Trip End</th> --}}
+                                        <th>Origin</th>
+                                        <th>Destnation</th>
+                                        <th>Created By</th>
+                                    </tr>
+                                </thead>
+                                {{#each username}}
+                                <tbody>
+                                    <tr>
+                                        <td>{{this.id}}</td>
+                                        <td>{{this.begintrip}}</td>
+                                        {{!-- <td>{{this.begintrip}}</td> --}}
+                                        <td>{{this.origin}}</td>
+                                        <td>{{this.destination}}</td>
+                                        <td>{{this.first_name}}</td>
+                                        <td> <button data-id="{{this.id}}" class="delquote">Delete</button></td>
+                                        {{/each}}
+                                    </tr>
+                                </tbody>
+
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+</div>
+<!--Section for Older trips-->
+<div class="container">
+    <div class="section">
+        <div class="row">
+            <div class="col s12 m4">
+
+                <div class="card horizontal">
+                    <div class="card-image">
+                        <img src="http://localhost:3000/img/Landscape-Mobile-min.jpg">
+                    </div>
+                    <div class="card-stacked">
+                        <div class="card-content">
+                            <p style="font-size: 20pt;">Past trips</p>
+                        </div>
+                        <div class="card-action">
+                            <a href="#">Trip 1</a>
+                            <br>
+                            <a href="#">Trip 2</a>
+                            <br>
+                            <a href="#">Trip 3</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+<style>
+    #overflowTest {
+        background: rgb(55, 57, 55);
+        color: white;
+        padding: 5px;
+        width: 100%;
+        height: 300px;
+        overflow: scroll;
+        border: 1px solid #ccc;
+    }
+</style>
+<script>
+
+
+    $(".delquote").on("click", function (event) {
+        var id = $(this).data("id");
+
+        // Send the DELETE request.
+        $.ajax("/api/quotes/" + id, {
+            type: "DELETE"
+        }).then(
+            function () {
+                console.log("deleted id ", id);
+                // Reload the page to get the updated list
+                location.reload();
+            }
+        );
+    });
+
+
+</script>
