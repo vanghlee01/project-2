@@ -26,6 +26,20 @@ module.exports = function(app) {
     console.log(req.body.user + "cheking login");
   });
 
+  //ATTENTION!!!!!!=====================================
+  //grabs the destination data to bring into the API call.
+  app.get("/api/getDestination", function(req, res) {
+    con.query("SELECT destination FROM survey", function(err, result) {
+      if (err) throw err;
+      res.json({
+        status: true,
+        data: result,
+        message: "user registered successfuly"
+      });
+    });
+  });
+  //ATTENTION!!!!!!=====================================
+
   app.get("/", function(req, res) {
     res.render("auth", { title: "Home", userData: req.user });
 
@@ -38,12 +52,12 @@ module.exports = function(app) {
     console.log(req.user + "before survay");
   });
 
+
   app.get("/example", function(req, res) {
     res.render("example", { title: "survey", userData: req.user });
 
     console.log(req.user + "before survay");
   });
-
   app.get("/surveyplan", function(req, res) {
     res.render("surveyplan", { title: "Home", userData: req.user });
 
@@ -59,6 +73,7 @@ module.exports = function(app) {
   app.post("/controllers/register-controller", registerController.register);
   app.post("/controllers/profile-controller", profileController.profile);
   app.post("/controllers/survey-controller", surveycontroller.survey);
+
 
   app.delete("/api/quotes/:id", function(req, res) {
     con.query("DELETE FROM survey WHERE id = ?", [req.params.id], function(
