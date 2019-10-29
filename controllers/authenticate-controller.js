@@ -6,7 +6,7 @@ var app = express();
 var exphbs = require("express-handlebars");
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
-var alert    = require("alert-node");
+var alert = require("alert-node");
 
 module.exports.authenticate = function(req, res) {
   var username = req.body.username_r;

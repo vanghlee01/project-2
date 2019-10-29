@@ -1,7 +1,7 @@
 var connection = require("../config/config");
 var zomato = require("zomato-api");
 var client = zomato({
-  userKey: "967e2e08ce22588b1668ae3b432bf765"
+  userKey: "967e2e08ce22588b1668ae3b432bf765 "
 });
 
 module.exports.survey = function(req, res) {
