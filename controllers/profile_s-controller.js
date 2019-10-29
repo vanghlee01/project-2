@@ -1,5 +1,3 @@
-
-
 var Cryptr = require("cryptr");
 var connection = require("../config/config");
 var cryptr = new Cryptr("myTotalySecretKey");
@@ -46,5 +44,4 @@ module.exports.profile = function(req, res) {
     
       
       
-      
-      
+   

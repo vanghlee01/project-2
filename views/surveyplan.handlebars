@@ -1,3 +1,4 @@
+
 <title>W3.CSS</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -23,7 +24,15 @@
                         <div class="row " style="position:fixed;right:20px;top:10px;">
                         <a class="btn btn-info btn-lg" class="glyphicon glyphicon-log-ou" href="/" style=" width:auto;">log out</a>
 
-            </div>
+
+<div class="container">
+    <div class="row">
+        <div class="col s12 center">
+            <h1 class="center grey-text trip-planner">Day-Dreamer!</h1>
+            <p class="center grey-text ">Now that we know where you are going - build out the details here!</p>
+        </div>
+    </div>
+</div>
 
                  <div class="row " style="position:fixed;right:150px;top:10px;">
                     <form  action="/controllers/profile-controller" method="post">
@@ -40,28 +49,61 @@
        
 
 
-<div class="w3-row-padding w3-theme">
+                    </span>
+                    <div id="overflowTest" class="jumbotron jumbotron-billboard text-center">
 
-            <div class="col s12 center">
-                <h2>Trip Planner!</h2>
-                <p class="center ">Now that we know where you are going - build out the details here!</p>
+                        <div class="container pt">
+
+                            <div class="mt-5 text-color">
+                                <h4>Find the best Restaurants</h4>
+                            </div>
+                            <div class="col-xs-6 pl-0 pr-0">
+                                <input id="getText" type="text" class="form-control"
+                                    placeholder="Enter Restaurant Type">
+                            </div>
+                            <button id="getMessage" class="btn btn-success col-xs-2">Search</button>
+                        </div>
+                    </div>
+                </div>
+
             </div>
-        
-<div class="w3-third w3-section">
-<div class="w3-card-4">
-                <div class="card col s3 left">
+            <hr>
+
+
+        </div>
+    </div>
+</div>
+</div>
+</div>
+</div>
+
+<!--Events parallax-->
+<div id="index-banner" class="parallax-container" style="height: 200px;">
+    <div class="section no-pad-bot">
+        <h5 class="col-s5 offset-s7 parallaxText">Events</h5>
+    </div>
+    <div class="parallax"><img src="/img/celebration.jpg" alt="fireworks image">
+    </div>
+</div>
+<div class="container">
+    <div class="carousel" id="add-artists">
+        <div class="carousel-item">
+            <div class="card">
                 <div class="card-image waves-effect waves-block waves-light">
-                    <img class="activator" id="destination-image"
-                        src="https://media.gettyimages.com/photos/eiffel-tower-in-paris-france-picture-id924894324?s=612x612">
+                    <img class="activator" id=""
+                        src="https://upload.wikimedia.org/wikipedia/commons/4/44/Yankee_Stadium_upper_deck_2010.jpg">
                 </div>
                 <div class="card-content">
+
                     <span class="card-title activator grey-text text-darken-4">Book hotel and Flights <i
                             class="material-icons right">more_vert</i></span>
                    
+
                 </div>
                 <div class="card-reveal">
-                    <span class="card-title grey-text text-darken-4"><i></i><i
+                    <span class="card-title grey-text text-darken-4">Sports Events<i
                             class="material-icons right">close</i></span>
+
 
                     <!-- Have these fields editable / updateable -->
                     <form action="">
@@ -74,16 +116,14 @@
   
 
 </form>
+
                 </div>
             </div>
         </div>
-    </div>
-
-
-<div class="w3-third w3-section">
-<div class="w3-card-4">
-                <div class="card col s3 left">
+        <div class="carousel-item">
+            <div class="card">
                 <div class="card-image waves-effect waves-block waves-light">
+
                     <img class="activator" id="destination-image"
                         src="https://static.more.com/wp-content/uploads/2017/05/01190901/photo-1517479149777-5f3b1511d5ad.jpeg">
                 </div>
@@ -99,61 +139,98 @@
                         
                         
                         
+
                 </div>
             </div>
         </div>
-    
-
-</div>
-
-<div class="w3-third w3-section">
-<div  id="overflowTest" class="w3-card-4">
-                <div class="card col s3 left">
+        <div class="carousel-item">
+            <div class="card">
                 <div class="card-image waves-effect waves-block waves-light">
-                    <img class="activator" id="destination-image"
-                        src="https://notablelife.com/media/2015/07/resto.jpg">
+                    <img class="activator" id=""
+                        src="https://www.iamexpat.nl/sites/default/files/styles/article--full/public/concerts-amsterdam_0.jpg?itok=TWszOePD">
                 </div>
                 <div class="card-content">
+
                     <span class="card-title activator grey-text text-darken-4">Find Restaurants <i
                             class="material-icons right">more_vert</i></span>
 
                                 <input id="destination"    type="hidden"   destination="username"  value=  {{{destination}}} >
                               
                   
+
                 </div>
                 <div class="card-reveal">
-                     <div class = "message col-md-12"></div> 
-                    <span class="card-title grey-text "><i>Close</i>
-                                                        
-                                  </span>
-<div  id="overflowTest" class="jumbotron jumbotron-billboard text-center">
-	
-	<div class="container pt">
-		
-		<div class="mt-5 text-color">
-			<h4>Find the best Restaurants</h4>
-		</div>
-        	<div class="col-xs-6 pl-0 pr-0">
-				<input id="getText" type="text" class="form-control" placeholder="Enter Restaurant Type">
-				</div>
-				<button id = "getMessage" class = "btn btn-success col-xs-2">Search</button>
-			</div>
-		</div>
-	</div>
-
-	</div>
-	<hr>
-	
-          
+                    <span class="card-title grey-text text-darken-4">Concerts<i
+                            class="material-icons right">close</i></span>
+                    <div class="center col s6">
+                        <div class="input-field col s12">
+                            <input value="" id="artist_name2" type="text" class="validate">
+                            <label class="active" for="artist_name2">Search for performers</label>
+                            <input value="" id="locate_name" type="text" class="validate">
+                            <label class="active" for="locate_name">Search for performers</label>
+                            <a class="waves-effect waves-light btn findArtist">button</a>
+                        </div>
+                    </div>
+                    <div id="add-selection"></div>
+                </div>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <div class="card">
+                <div class="card-image waves-effect waves-block waves-light">
+                    <img class="activator" id=""
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8F3O5KU1yq8r-cSO8ZhcLddYZjBKQFrtqDEjd7ynsP71do5Ft&s">
+                </div>
+                <div class="card-content">
+                    <span class="card-title activator grey-text text-darken-4">Explore<i
+                            class="material-icons right">more_vert</i></span>
+                    <p><a href="#">Link</a></p>
+                </div>
+                <div class="card-reveal">
+                    <span class="card-title grey-text text-darken-4">Explore<i
+                            class="material-icons right">close</i></span>
+                    <img>
+                    <p><b>Place: </b></p>
+                    <p><b>Location: </b></p>
+                    <div class="divider"></div>
+                </div>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <div class="card">
+                <div class="card-image waves-effect waves-block waves-light">
+                    <img class="activator" id=""
+                        src="https://www.greenandturquoise.com/wp-content/uploads/2016/05/How-To-Instagram-Pics-Travel-1500x1000.jpg">
+                </div>
+                <div class="card-content">
+                    <span class="card-title activator grey-text text-darken-4">Instagram Pics<i
+                            class="material-icons right">more_vert</i></span>
+                    <p><a href="#">Link</a></p>
+                </div>
+                <div class="card-reveal">
+                    <span class="card-title grey-text text-darken-4">Instagram Pics<i
+                            class="material-icons right">close</i></span>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input type="text" class="validate">
+                            <label id="insta-pic" class="active" for="event_name2">Search Locations</label>
+                            {{!-- <a class="waves-effect waves-light btn">button</a> --}}
+                            <button class="waves-effect waves-light instagram-pic btn-small" type="submit"
+                                name="action">Submit
+                                <i class="material-icons right">send</i>
+                            </button>
+                        </div>
+                    </div>
+                    <p id="put_insta"></p>
+                    <div class="divider"></div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
-</div>
 
-
-</body>
-</html>
 <script>
+
     $(document).ready(function() {
 
  $("#getMessage").on("click", function() {
@@ -241,3 +318,69 @@
 <style>
     
 </style>
+
+   
+        //--------------------------------------------------------------------------------------------------------
+        $("#select_id").change(function () {
+            select();
+        });
+
+        $('.carousel').carousel();
+        $(document).on("click", ".instagram-pic", function () {
+            var insta = $("#insta-pic").val().trim();
+            console.log(insta);
+            var queryURL = "https://pixabay.com/api/?key=14031716-ee5fc1d1564bb90e3420570a5&q=" +
+                insta + "&image_type=photo&safesearch=true&order=popular&category=travel&totalHits=1&fullHDURL&orientation=vertical";
+            $.ajax({
+                url: queryURL,
+                method: "GET"
+            }).then(function (resp1) {
+                console.log(resp1);
+                for (var j = 0; j < resp1.hits.length; j++) {
+                    var newImg = $("<img>");
+                    newImg.attr("src", resp1.hits[j].largeImageURL).attr("style", "height: 125px; width: 125px; margin-right: 3px; margin-left:3px;");
+                    var photo;
+                    var destinationImage = $("#put_insta");
+                    destinationImage.prepend(newImg);
+                }
+            });
+        });
+        $(document).on("click", ".findArtist", function () {
+            var thingToLookUp = $("#artist_name2").val().trim();
+            var eventThing = $("#locate_name").val().trim();
+            var queryURL3 = "https://rest.bandsintown.com/artists/" + thingToLookUp + "/events?app_id=codingbootcamp"
+            $.ajax({
+                url: queryURL3,
+                method: "GET"
+            }).then(function (resp3) {
+                var results = resp3;
+                console.log(results);
+                var displayShows = [];
+                for (shows in results) {
+                    if (results[shows].venue.country === eventThing) {
+                        displayShows.push(results[shows]);
+                    }
+                }
+                for (var i = 0; i < displayShows.length; i++) {
+                    var child1 = $("<div>");
+                    var personP = displayShows[i].lineup[0];
+                    var para1 = $("<p>").append("<a href='" + displayShows[i].offers[0].url + "'>- Tickets</a>").attr("style", "margin: 0px;");
+                    var para2 = $("<p>").append("<a href='" + displayShows[i].offers[1].url + "'>- VIP Tickets</a>").attr("style", "margin: 0px;");
+                    var venueForArtist = $("<p>").text("Venue: " + displayShows[i].venue.name).attr("style", "margin: 0px;");
+                    var locationForArtist = $("<p>").text("City: " + displayShows[i].venue.city + ", " + displayShows[i].venue.country).attr("style", "margin: 0px;");
+                    var timeOfPerformance = $("<p>").text("Time: " + displayShows[i].datetime).attr("style", "margin: 0px 0px 3px 0px;");
+                    child1.append(personP);
+                    child1.append(venueForArtist);
+                    child1.append(locationForArtist);
+                    child1.append(timeOfPerformance);
+                    child1.append(para1);
+                    child1.append(para2);
+                    var separater = $("<div>").attr("class", "divider");
+                    $("#add-selection").append(child1);
+                    $("#add-selection").append(separater);
+                }
+            });
+        });
+    });
+</script>
+
