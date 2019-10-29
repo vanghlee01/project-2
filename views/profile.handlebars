@@ -67,7 +67,11 @@
                         
                             <a class="waves-effect waves-light btn modal-trigger teal accent-1 black-text" href="#modal1"
           style=" width:auto;">Add plans</a>
+
+
                                    <br/>
+
+
                             <hr>
                     <form  action="/controllers/profile_r-controller" method="post" href="#modal2">
                         <input type="hidden"  type="hidden"   name="name"  {{#each username}} value=  {{this.first_name}} {{/each}} ></input>
@@ -81,11 +85,13 @@
                 </div>
             </div>
         </div>
+
     </div>
      
     <!--Section for Current trip-->
     <div id="modal1" class="modal">
          <div class="modal-content">
+
  
             {{!-- <form class="col s6 offset-s3" id="updateplan" class="button-size" action="/controllers/survey-controller" method="POST"> --}}
          {{!-- <form class="col s6 offset-s3" action="/controllers/survey-controller" method="POST"> --}}
@@ -161,11 +167,13 @@
     
      </form>
 </div>
+
                   </div>
       </div>
     </form>
   </div>
 </div>
+
     </div>
 <div id="modal2" class="modal2">
          <div class="modal-content">    
@@ -183,6 +191,7 @@
                          <table class="table">
                             <thead>
                             <tr>
+
                                  <th>ID</th>
                                 <th>Name</th>
                                  <th>Flight</th>
@@ -213,6 +222,7 @@
     </form>
   </div>
 </div>
+
                              </div>
                          </div>
                         </div>
