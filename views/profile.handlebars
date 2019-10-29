@@ -1,4 +1,3 @@
-
 <body>
       <div id="username"style="position:fixed;right:20%;color:green;" >
           {{#if user}}
@@ -37,7 +36,7 @@
                     <div class="card-stacked">
                         <div class="card-content">
                         <div id="overflowTest">  
-                               <a href="#">Upcoming travel plans </a>   
+                               <a href="#">Future travel plans </a>   
                          <table class="table">
                             <thead>
                             <tr>
@@ -66,52 +65,156 @@
                         </table>
                           </div>
                           </div>
-                             </div>
-                         </div>
+                            </div>
                         </div>
-                       
+                        
+                            <a class="waves-effect waves-light btn modal-trigger teal accent-1 black-text" href="#modal1"
+          style=" width:auto;">Add plans</a>
+
+                                   <br/>
+
+                            <hr>
+                    <form  action="/controllers/profile_r-controller" method="post" href="#modal2">
+                        <input type="hidden"  type="hidden"   name="name"  {{#each username}} value=  {{this.first_name}} {{/each}} ></input>
+                          <button class="btn waves-effect waves-light" type="submit"
+                        name="action">Upcoming plan 
+                     
+                    </button>
+        
+                         </form>
                     </div>
                 </div>
             </div>
 
 
         </div>
+
     </div>
+     
     <!--Section for Current trip-->
+    <div id="modal1" class="modal">
+         <div class="modal-content">
+
+ 
+            {{!-- <form class="col s6 offset-s3" id="updateplan" class="button-size" action="/controllers/survey-controller" method="POST"> --}}
+         {{!-- <form class="col s6 offset-s3" action="/controllers/survey-controller" method="POST"> --}}
+        <form class="col s12" action="/controllers/profile_s-controller" method="POST"> 
+                
+                <div class="row">                                                                 
+                     
+                    <div class="input-field col s6">
+                          <input readonly  type="text" name="username" placeholder="Guest " {{#each username}} value=  {{this.first_name}} {{/each}}>
+                      
+                        <label id="first_name"  for="name">Name</label>
+                    </div>
+                </div>
+                        <div class="row">
+                    <div class="input-field col s12">
+                          <input  type="text" name="first_name" >
+                        <label id="flight"  for="first_name">Name</label>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="input-field col s12">
+                          <input  type="text" name="flight" >
+                        <label id="flight"  for="flight">Flights Information?</label>
+                    </div>
+                </div>
+                <div class="row">
+                      <div class="input-field col4 s12">
+                            <input  type="text" name="hotel_inf" >
+                        <label for="hotel_inf">Hotel Information </label>
+                    </div>
+                </div>
+               
+                <div class="row">
+                    <div class="input-field col s12">
+                                  <input  type="text" name="hotel_r" >
+                        <label for="hotel_r">Hotel/Resort Preference </label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col4 s12">
+                         <input type="text" name="list" >
+                        <label for="list">List any other notes or comments here. For example, future travel interests, etc.</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                         <input  type="text" name="activity" >
+                        <label for="activity">What activities do you enjoy when traveling?</label>
+                    </div>
+                </div>
+                 <div class="row">
+                    <div class="input-field col s12">
+                         <input  type="text" name="comment1" >
+                        <label for="comment1">Comment:</label>
+                              </div>
+                    </div>
+                    
+                </div>
+     
+             
+         <div class="row">
+            <div class="col s12 center">
+                <button class="btn waves-effect waves-light" type="submit"
+                        name="action">Submit
+                        <i class="material-icons right">send</i>
+                    </button>
+            </div>
+            
+        </div>
+       
+      </div>
+    
+     </form>
+</div>
+
+                  </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+    </div>
+<div id="modal2" class="modal2">
+         <div class="modal-content">    
+   <!--Section for Current trip-->
     <div class="container">
         <div class="row">
             <div class="col s12 m12">
 
                 <div class="card horizontal">
                     <div class="card-image">
-                        <img src="http://localhost:3000/img/boarding-pass-euro-ticket-69866.jpg">
                     </div>
                     <div class="card-stacked">
                         <div class="card-content">
                         <div id="overflowTest">  
-                             <a href="#">Previous travel plans </a>     
+                             <a href="#">paln details </a>     
                          <table class="table">
                             <thead>
                             <tr>
 
                                  <th>ID</th>
-                                <th>Trip Begin</th>
-                                {{!-- <th>Trip End</th> --}}
-                                <th>Origin</th>
-                                <th>Destnation</th>
-                                 <th>Created By</th>
+                                <th>Name</th>
+                                 <th>Flight</th>
+                                <th>Hotel</th>
+                                <th>Activity</th>
+                                 <th>Remarks</th>
                             </tr>
                             </thead>
-                              {{#each username}}
+                              {{#each user}}
                             <tbody>
                             <tr>
                                 <td>{{this.id}}</td>
-                                <td>{{this.begintrip}}</td>
+                                <td>{{this.username}}</td>
                                  {{!-- <td>{{this.begintrip}}</td> --}}
-                                <td>{{this.origin}}</td>
-                                <td>{{this.destination}}</td>
-                                 <td>{{this.first_name}}</td>
-                                <td> <button data-id="{{this.id}}" class="delquote">Delete</button></td>
+                                <td>{{this.hotel_inf}}</td>
+                                <td>{{this.activity}}</td>
+                                 <td>{{this.comment1}}</td>
+                          <td> <button data-id="{{this.id}}" class="delquote">Delete</button></td>
+                            
                               {{/each}}
                             </tr>
                             </tbody>
@@ -119,6 +222,12 @@
                         </table>
                           </div>
                           </div>
+                                  </div>
+      </div>
+    </form>
+  </div>
+</div>
+
                              </div>
                          </div>
                         </div>
@@ -130,59 +239,6 @@
 
         </div>
     </div>
-    <!--Section for Current trip-->
-    <div class="container">
-        <div class="row">
-            <div class="col s12 m12">
-
-                <div class="card horizontal">
-                    <div class="card-image">
-                        <img src="http://localhost:3000/img/Landscape-Mobile-min.jpg">
-                    </div>
-                    <div class="card-stacked">
-                        <div class="card-content">
-                        <div id="overflowTest"> 
-                                 <a href="#">Wish travel plans </a>   
-                         <table class="table">
-                            <thead>
-                            <tr>
-                             <th>ID</th>
-                                <th>Trip Begin</th>
-                                {{!-- <th>Trip End</th> --}}
-                                <th>Origin</th>
-                                <th>Destnation</th>
-                                 <th>Created By</th>
-                            </tr>
-                            </thead>
-                              {{#each username}}
-                            <tbody>
-                            <tr>
-                                <td>{{this.id}}</td>
-                                <td>{{this.begintrip}}</td>
-                                 {{!-- <td>{{this.begintrip}}</td> --}}
-                                <td>{{this.origin}}</td>
-                                <td>{{this.destination}}</td>
-                                 <td>{{this.first_name}}</td>
-                                <td> <button data-id="{{this.id}}" class="delquote">Delete</button></td>
-                              {{/each}}
-                            </tr>
-                            </tbody>
-
-                        </table>
-                          </div>
-                          </div>
-                             </div>
-                         </div>
-                        </div>
-                     
-                    </div>
-                </div>
-            </div>
-
-
-        </div>
-    </div>
-  
    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </body>

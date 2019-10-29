@@ -1,4 +1,3 @@
-
 var mysql = require('mysql');
 var http = require('http');
 var fs=require('fs');
@@ -24,6 +23,3 @@ con.query(sql, [name, first_name], function (err, result) {
   
 }
     
-  
-
-  

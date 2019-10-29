@@ -6,6 +6,9 @@ var authenticateController = require("../controllers/authenticate-controller");
 var registerController = require("../controllers/register-controller");
 var surveycontroller = require("../controllers/survey-controller");
 var profileController = require("../controllers/profile-controller");
+var profile_sController = require("../controllers/profile_s-controller");
+var profile_rController = require("../controllers/profile_r-controller");
+
 var con = require("../config/config");
 
 module.exports = function(app) {
@@ -49,6 +52,17 @@ module.exports = function(app) {
 
     console.log(req.user + "before survay");
   });
+  app.get("/controllers/profile_s-controller", function(req, res) {
+    res.render("auth", { title: "Home", userData: req.user });
+
+    console.log(req.user + "before survay");
+  });
+  app.get("/controllers/profile_r-controller", function(req, res) {
+    res.render("auth", { title: "Home", userData: req.user });
+
+    console.log(req.user + "before survay");
+  });
+
 
   console.log(authenticateController);
 
@@ -59,6 +73,10 @@ module.exports = function(app) {
   app.post("/controllers/register-controller", registerController.register);
   app.post("/controllers/profile-controller", profileController.profile);
   app.post("/controllers/survey-controller", surveycontroller.survey);
+  app.post("/controllers/profile_s-controller", profile_sController.profile);
+  app.post("/controllers/profile_r-controller",profile_rController.profile);
+
+
 
   app.delete("/api/quotes/:id", function(req, res) {
     con.query("DELETE FROM survey WHERE id = ?", [req.params.id], function(
