@@ -21,7 +21,7 @@ DROP TABLES if exists survey ;
 CREATE TABLE survey (
 id int(11) NOT NULL AUTO_INCREMENT,  ,
  username varchar(255) ,
- first_name VARCHAR(75) ,
+ date VARCHAR(75) ,
  last_name VARCHAR(75) ,
  email varchar(255) ,
  origin varchar(255),
